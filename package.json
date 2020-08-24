@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-mso",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Tailwind CSS plugin that generates MSO utilities.",
   "main": "index.js",
   "scripts": {
