@@ -1,0 +1,30 @@
+{
+  "name": "tailwindcss-mso",
+  "version": "0.0.0",
+  "description": "Tailwind CSS plugin that generates MSO utilities.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maizzle/tailwindcss-mso.git"
+  },
+  "author": "Cosmin Popovici (@cossssmin)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maizzle/tailwindcss-mso/issues"
+  },
+  "homepage": "https://github.com/maizzle/tailwindcss-mso#readme",
+  "dependencies": {
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {
+    "fs-extra": "^9.0.1",
+    "jest": "^26.4.1",
+    "jest-matcher-css": "^1.1.0",
+    "np": "*",
+    "postcss": "^7.0.32",
+    "tailwindcss": "^1.7.3"
+  }
+}
