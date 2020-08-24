@@ -12,10 +12,21 @@
   },
   "author": "Cosmin Popovici (@cossssmin)",
   "license": "MIT",
+  "keywords": [
+    "tailwindcss",
+    "html-emails",
+    "outlook-css",
+    "email-marketing",
+    "maizzle",
+    "mso"
+  ],
   "bugs": {
     "url": "https://github.com/maizzle/tailwindcss-mso/issues"
   },
   "homepage": "https://github.com/maizzle/tailwindcss-mso#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "lodash": "^4.17.20"
   },
