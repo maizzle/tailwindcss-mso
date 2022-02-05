@@ -28,14 +28,21 @@
     "access": "public"
   },
   "dependencies": {
-    "lodash": "^4.17.20"
+    "lodash.forown": "^4.4.0",
+    "lodash.isobject": "^3.0.2"
   },
   "devDependencies": {
-    "fs-extra": "^9.0.1",
-    "jest": "^26.4.1",
-    "jest-matcher-css": "^1.1.0",
+    "fs-extra": "^10.0.0",
+    "jest": "^27.5.0",
+    "jest-diff": "^27.5.0",
     "np": "*",
-    "postcss": "^7.0.32",
-    "tailwindcss": "^1.7.3"
+    "postcss": "^8.4.6",
+    "prettier": "^2.1.2",
+    "tailwindcss": "^3.0.18"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest/customMatchers.js"
+    ]
   }
 }

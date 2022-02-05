@@ -1,14 +1,15 @@
-const _ = require('lodash')
+const plugin = require('tailwindcss/plugin')
+const isObject = require('lodash.isobject')
+const forOwn = require('lodash.forown')
 const data = require('./data')
 
-module.exports = function() {
-  return function({ addUtilities, e, theme }) {
-
+const mso = plugin(
+  function({ addUtilities, e, theme }) {
     const newUtilities = {}
 
     // Utilities with predefined values
-    _.forOwn(data, (value, key) => {
-      _.forOwn(value, (v, k) => {
+    forOwn(data, (value, key) => {
+      forOwn(value, (v, k) => {
         newUtilities[`.${key}-${v}`] = {
           [key]: v
         }
@@ -16,7 +17,7 @@ module.exports = function() {
     })
 
     // Spacing utilities
-    _.forOwn(theme('spacing'), (value, key) => {
+    forOwn(theme('spacing'), (value, key) => {
       // mso-text-raise
       newUtilities[`.${e(`mso-text-raise-${key}`)}`] = {
         'mso-text-raise': value
@@ -78,7 +79,7 @@ module.exports = function() {
     })
 
     // Font utilities
-    _.forOwn(theme('fontSize'), (value, key) => {
+    forOwn(theme('fontSize'), (value, key) => {
       // ANSI font size
       newUtilities[`.${e(`mso-ansi-font-size-${key}`)}`] = {
         'mso-ansi-font-size': value
@@ -91,9 +92,9 @@ module.exports = function() {
     })
 
     // Color utilities
-    _.forOwn(theme('colors'), (colors, name) => {
-      if (_.isObject(colors)) {
-        _.forOwn(colors, (hex, shade) => {
+    forOwn(theme('colors'), (colors, name) => {
+      if (isObject(colors)) {
+        forOwn(colors, (hex, shade) => {
           // mso-color-alt
           newUtilities[`.${e(`mso-color-alt-${name}-${shade}`)}`] = {
             'mso-color-alt': hex
@@ -120,6 +121,7 @@ module.exports = function() {
     addUtilities(newUtilities, {
       respectImportant: false,
     })
-
   }
-}
+)
+
+module.exports = mso
