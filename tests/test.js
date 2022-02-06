@@ -4,13 +4,12 @@ const postcss = require('postcss')
 const tailwindcss = require('tailwindcss')
 const plugin = require('../index.js')
 
-const expected = fs.readFileSync('./tests/expected/output.css', 'utf8').trim()
-
 const run = config => {
   config = {
-    content: [
+    content: ['./data.js'],
+    safelist: [
       {
-        raw: expected,
+        pattern: /^(mso|text)/,
       },
     ],
     plugins: [plugin],
@@ -27,10 +26,16 @@ const run = config => {
     )
 }
 
+const expected = () => fs.readFileSync('./tests/expected/output.css', 'utf8').trim()
+
+test.before(() => {
+  fs.writeFileSync('./tests/expected/output.css', run().css)
+})
+
 test('It generates utilities', async t => {
   const {css} = await run()
 
-  t.is(css, expected)
+  t.is(css, expected())
 })
 
 test('Works with string font size config', async t => {
@@ -44,5 +49,5 @@ test('Works with string font size config', async t => {
     },
   })
 
-  t.is(css, expected)
+  t.is(css, expected())
 })

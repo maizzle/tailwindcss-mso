@@ -104,6 +104,11 @@ const mso = plugin(
           newUtilities[`.${e(`mso-highlight-${name}-${shade}`)}`] = {
             'mso-highlight': hex,
           }
+
+          // text-underline-color
+          newUtilities[`.${e(`text-underline-${name}-${shade}`)}`] = {
+            'text-underline-color': hex,
+          }
         })
       } else {
         // mso-color-alt
@@ -114,6 +119,11 @@ const mso = plugin(
         // mso-highlight
         newUtilities[`.${e(`mso-highlight-${name}`)}`] = {
           'mso-highlight': colors,
+        }
+
+        // text-underline-color
+        newUtilities[`.${e(`text-underline-${name}`)}`] = {
+          'text-underline-color': colors,
         }
       }
     })
