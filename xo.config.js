@@ -4,6 +4,7 @@ module.exports = {
     semi: 0,
     'max-params': 0,
     'capitalized-comments': 0,
+    'unicorn/filename-case': 0,
     'unicorn/string-content': 0,
     'unicorn/prefer-module': 0,
     'promise/prefer-await-to-then': 0,

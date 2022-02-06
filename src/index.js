@@ -1,9 +1,9 @@
 const plugin = require('tailwindcss/plugin')
 const isObject = require('lodash.isobject')
 const forOwn = require('lodash.forown')
-const data = require('./data.js')
+const data = require('../data.js')
 
-const negate = require('./node_modules/tailwindcss/lib/util/negateValue.js').default
+const negate = require('./util/negateValue.js')
 
 const mso = plugin(
   ({addUtilities, e, theme}) => {

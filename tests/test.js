@@ -1,7 +1,7 @@
 const test = require('ava')
 const postcss = require('postcss')
 const tailwindcss = require('tailwindcss')
-const plugin = require('../index.js')
+const plugin = require('../src/index.js')
 
 const run = config => {
   config = {
