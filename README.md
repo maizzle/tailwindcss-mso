@@ -22,7 +22,7 @@ In your `tailwind.config.js`:
 ```js
 module.exports = {
   plugins: [
-    require('tailwindcss-mso')(),
+    require('tailwindcss-mso'),
   ],
 };
 ```
@@ -48,6 +48,9 @@ These utilities are all based on your `theme.spacing` scale:
 - `mso-padding-alt`
 - `mso-margin-alt`
 - `mso-text-raise`
+- `mso-font-width`
+
+All of these also include negative versions.
 
 ### Color utilities
 
@@ -55,6 +58,7 @@ These utilities are all based on your `theme.colors` config:
 
 - `mso-color-alt`
 - `mso-highlight`
+- `text-underline-color`
 
 ### Font utilities
 
@@ -65,7 +69,7 @@ These utilities are all based on your `theme.fontSize` config:
 
 Additionally, these default values are also included for each utility: large, larger, medium, small, smaller, x-large, x-small, xx-large, xx-small.
 
-### Other utilities
+### Default utilities
 
 The plugin also generates these utilities with default values:
 
