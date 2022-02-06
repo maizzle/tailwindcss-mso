@@ -1,118 +1,133 @@
-const _ = require('lodash')
-const data = require('./data')
+const plugin = require('tailwindcss/plugin')
+const isObject = require('lodash.isobject')
+const forOwn = require('lodash.forown')
+const data = require('./data.js')
 
-module.exports = function() {
-  return function({ addUtilities, e, theme }) {
+const negate = require('./node_modules/tailwindcss/lib/util/negateValue.js').default
 
+const mso = plugin(
+  ({addUtilities, e, theme}) => {
     const newUtilities = {}
 
+    const createUtilities = (name, rule, key, value, negative = false) => {
+      let utility = `.${e(`${name}-${key}`)}`
+      newUtilities[utility] = {}
+      newUtilities[utility][rule] = value
+
+      if (negative && !value.startsWith('0') && !value.startsWith('-')) {
+        utility = `.-${e(`${name}-${key}`)}`
+        newUtilities[utility] = {}
+        newUtilities[utility][rule] = negate(value)
+      }
+    }
+
     // Utilities with predefined values
-    _.forOwn(data, (value, key) => {
-      _.forOwn(value, (v, k) => {
+    forOwn(data, (value, key) => {
+      forOwn(value, (v, k) => { // eslint-disable-line no-unused-vars
         newUtilities[`.${key}-${v}`] = {
-          [key]: v
+          [key]: v,
         }
       })
     })
 
     // Spacing utilities
-    _.forOwn(theme('spacing'), (value, key) => {
-      // mso-text-raise
-      newUtilities[`.${e(`mso-text-raise-${key}`)}`] = {
-        'mso-text-raise': value
-      }
+    forOwn(theme('spacing'), (value, key) => {
+      createUtilities('mso-text-raise', 'mso-text-raise', key, value, true)
 
       // mso-padding-alt
       newUtilities[`.${e(`mso-padding-alt-${key}`)}`] = {
-        'mso-padding-alt': value
+        'mso-padding-alt': value,
       }
       newUtilities[`.${e(`mso-padding-top-alt-${key}`)}`] = {
-        'mso-padding-top-alt': value
+        'mso-padding-top-alt': value,
       }
       newUtilities[`.${e(`mso-padding-right-alt-${key}`)}`] = {
-        'mso-padding-right-alt': value
+        'mso-padding-right-alt': value,
       }
       newUtilities[`.${e(`mso-padding-bottom-alt-${key}`)}`] = {
-        'mso-padding-bottom-alt': value
+        'mso-padding-bottom-alt': value,
       }
       newUtilities[`.${e(`mso-padding-left-alt-${key}`)}`] = {
-        'mso-padding-left-alt': value
+        'mso-padding-left-alt': value,
       }
 
       // mso-margin-alt
-      newUtilities[`.${e(`mso-margin-alt-${key}`)}`] = {
-        'mso-margin-alt': value
-      }
-      newUtilities[`.${e(`mso-margin-top-alt-${key}`)}`] = {
-        'mso-margin-top-alt': value
-      }
-      newUtilities[`.${e(`mso-margin-right-alt-${key}`)}`] = {
-        'mso-margin-right-alt': value
-      }
-      newUtilities[`.${e(`mso-margin-bottom-alt-${key}`)}`] = {
-        'mso-margin-bottom-alt': value
-      }
-      newUtilities[`.${e(`mso-margin-left-alt-${key}`)}`] = {
-        'mso-margin-left-alt': value
-      }
+      createUtilities('mso-margin-alt', 'mso-margin-alt', key, value, true)
+
+      // mso-margin-top-alt
+      createUtilities('mso-margin-top-alt', 'mso-margin-top-alt', key, value, true)
+
+      // mso-margin-right-alt
+      createUtilities('mso-margin-right-alt', 'mso-margin-right-alt', key, value, true)
+
+      // mso-margin-bottom-alt
+      createUtilities('mso-margin-bottom-alt', 'mso-margin-bottom-alt', key, value, true)
+
+      // mso-margin-left-alt
+      createUtilities('mso-margin-left-alt', 'mso-margin-left-alt', key, value, true)
 
       // mso-line-height-alt
-      newUtilities[`.${e(`mso-line-height-alt-${key}`)}`] = {
-        'mso-line-height-alt': value
-      }
+      createUtilities('mso-line-height-alt', 'mso-line-height-alt', key, value, true)
 
       // mso-text-indent-alt
-      newUtilities[`.${e(`mso-text-indent-alt-${key}`)}`] = {
-        'mso-text-indent-alt': value
-      }
+      createUtilities('mso-text-indent-alt', 'mso-text-indent-alt', key, value, true)
 
       // mso-table-lspace
-      newUtilities[`.${e(`mso-table-lspace-${key}`)}`] = {
-        'mso-table-lspace': value
-      }
+      createUtilities('mso-table-lspace', 'mso-table-lspace', key, value, true)
 
       // mso-table-rspace
-      newUtilities[`.${e(`mso-table-rspace-${key}`)}`] = {
-        'mso-table-rspace': value
-      }
+      createUtilities('mso-table-rspace', 'mso-table-rspace', key, value, true)
+
+      // mso-font-width
+      createUtilities('mso-font-width', 'mso-font-width', key, value, true)
     })
 
     // Font utilities
-    _.forOwn(theme('fontSize'), (value, key) => {
+    forOwn(theme('fontSize'), (value, key) => {
       // ANSI font size
       newUtilities[`.${e(`mso-ansi-font-size-${key}`)}`] = {
-        'mso-ansi-font-size': value
+        'mso-ansi-font-size': Array.isArray(value) ? value[0] : value,
       }
 
       // BIDI font size
       newUtilities[`.${e(`mso-bidi-font-size-${key}`)}`] = {
-        'mso-bidi-font-size': value
+        'mso-bidi-font-size': Array.isArray(value) ? value[0] : value,
       }
     })
 
     // Color utilities
-    _.forOwn(theme('colors'), (colors, name) => {
-      if (_.isObject(colors)) {
-        _.forOwn(colors, (hex, shade) => {
+    forOwn(theme('colors'), (colors, name) => {
+      if (isObject(colors)) {
+        forOwn(colors, (value, shade) => {
           // mso-color-alt
           newUtilities[`.${e(`mso-color-alt-${name}-${shade}`)}`] = {
-            'mso-color-alt': hex
+            'mso-color-alt': value,
           }
 
           // mso-highlight
           newUtilities[`.${e(`mso-highlight-${name}-${shade}`)}`] = {
-            'mso-highlight': hex
+            'mso-highlight': value,
+          }
+
+          // text-underline-color
+          newUtilities[`.${e(`text-underline-${name}-${shade}`)}`] = {
+            'text-underline-color': value,
           }
         })
       } else {
         // mso-color-alt
         newUtilities[`.${e(`mso-color-alt-${name}`)}`] = {
-          'mso-color-alt': colors
+          'mso-color-alt': colors,
         }
 
         // mso-highlight
         newUtilities[`.${e(`mso-highlight-${name}`)}`] = {
-          'mso-highlight': colors
+          'mso-highlight': colors,
+        }
+
+        // text-underline-color
+        newUtilities[`.${e(`text-underline-${name}`)}`] = {
+          'text-underline-color': colors,
         }
       }
     })
@@ -120,6 +135,7 @@ module.exports = function() {
     addUtilities(newUtilities, {
       respectImportant: false,
     })
+  },
+)
 
-  }
-}
+module.exports = mso

@@ -17,4 +17,5 @@ module.exports = {
   'mso-color-alt': ['auto', 'windowtext'],
   'mso-line-height-rule': ['at-least', 'exactly'],
   'mso-line-height-alt': ['normal'],
+  'text-underline-color': ['auto', 'windowtext'],
 }
