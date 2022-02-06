@@ -1,4 +1,3 @@
-const fs = require('fs')
 const test = require('ava')
 const postcss = require('postcss')
 const tailwindcss = require('tailwindcss')
@@ -26,16 +25,14 @@ const run = config => {
     )
 }
 
-const expected = () => fs.readFileSync('./tests/expected/output.css', 'utf8').trim()
-
-test.before(() => {
-  fs.writeFileSync('./tests/expected/output.css', run().css)
+test.before(t => {
+  t.context.expected = run().css
 })
 
 test('It generates utilities', async t => {
   const {css} = await run()
 
-  t.is(css, expected())
+  t.is(css, t.context.expected)
 })
 
 test('Works with string font size config', async t => {
@@ -49,5 +46,5 @@ test('Works with string font size config', async t => {
     },
   })
 
-  t.is(css, expected())
+  t.is(css, t.context.expected)
 })
