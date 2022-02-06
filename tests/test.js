@@ -9,7 +9,7 @@ const run = config => {
     content: ['./data.js'],
     safelist: [
       {
-        pattern: /^(mso|text)/,
+        pattern: /^(-?mso|text)/,
       },
     ],
     plugins: [plugin],

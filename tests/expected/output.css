@@ -472,6 +472,9 @@
 .mso-text-raise-4 {
     mso-text-raise: 1rem
 }
+.-mso-text-raise-4 {
+    mso-text-raise: -1rem
+}
 .mso-padding-alt-4 {
     mso-padding-alt: 1rem
 }
@@ -490,35 +493,68 @@
 .mso-margin-alt-4 {
     mso-margin-alt: 1rem
 }
+.-mso-margin-alt-4 {
+    mso-margin-alt: -1rem
+}
 .mso-margin-top-alt-4 {
     mso-margin-top-alt: 1rem
+}
+.-mso-margin-top-alt-4 {
+    mso-margin-top-alt: -1rem
 }
 .mso-margin-right-alt-4 {
     mso-margin-right-alt: 1rem
 }
+.-mso-margin-right-alt-4 {
+    mso-margin-right-alt: -1rem
+}
 .mso-margin-bottom-alt-4 {
     mso-margin-bottom-alt: 1rem
+}
+.-mso-margin-bottom-alt-4 {
+    mso-margin-bottom-alt: -1rem
 }
 .mso-margin-left-alt-4 {
     mso-margin-left-alt: 1rem
 }
+.-mso-margin-left-alt-4 {
+    mso-margin-left-alt: -1rem
+}
 .mso-line-height-alt-4 {
     mso-line-height-alt: 1rem
+}
+.-mso-line-height-alt-4 {
+    mso-line-height-alt: -1rem
 }
 .mso-text-indent-alt-4 {
     mso-text-indent-alt: 1rem
 }
+.-mso-text-indent-alt-4 {
+    mso-text-indent-alt: -1rem
+}
 .mso-table-lspace-4 {
     mso-table-lspace: 1rem
+}
+.-mso-table-lspace-4 {
+    mso-table-lspace: -1rem
 }
 .mso-table-rspace-4 {
     mso-table-rspace: 1rem
 }
+.-mso-table-rspace-4 {
+    mso-table-rspace: -1rem
+}
 .mso-font-width-4 {
     mso-font-width: 1rem
 }
+.-mso-font-width-4 {
+    mso-font-width: -1rem
+}
 .mso-text-raise-5 {
     mso-text-raise: 1.25rem
+}
+.-mso-text-raise-5 {
+    mso-text-raise: -1.25rem
 }
 .mso-padding-alt-5 {
     mso-padding-alt: 1.25rem
@@ -538,35 +574,68 @@
 .mso-margin-alt-5 {
     mso-margin-alt: 1.25rem
 }
+.-mso-margin-alt-5 {
+    mso-margin-alt: -1.25rem
+}
 .mso-margin-top-alt-5 {
     mso-margin-top-alt: 1.25rem
+}
+.-mso-margin-top-alt-5 {
+    mso-margin-top-alt: -1.25rem
 }
 .mso-margin-right-alt-5 {
     mso-margin-right-alt: 1.25rem
 }
+.-mso-margin-right-alt-5 {
+    mso-margin-right-alt: -1.25rem
+}
 .mso-margin-bottom-alt-5 {
     mso-margin-bottom-alt: 1.25rem
+}
+.-mso-margin-bottom-alt-5 {
+    mso-margin-bottom-alt: -1.25rem
 }
 .mso-margin-left-alt-5 {
     mso-margin-left-alt: 1.25rem
 }
+.-mso-margin-left-alt-5 {
+    mso-margin-left-alt: -1.25rem
+}
 .mso-line-height-alt-5 {
     mso-line-height-alt: 1.25rem
+}
+.-mso-line-height-alt-5 {
+    mso-line-height-alt: -1.25rem
 }
 .mso-text-indent-alt-5 {
     mso-text-indent-alt: 1.25rem
 }
+.-mso-text-indent-alt-5 {
+    mso-text-indent-alt: -1.25rem
+}
 .mso-table-lspace-5 {
     mso-table-lspace: 1.25rem
+}
+.-mso-table-lspace-5 {
+    mso-table-lspace: -1.25rem
 }
 .mso-table-rspace-5 {
     mso-table-rspace: 1.25rem
 }
+.-mso-table-rspace-5 {
+    mso-table-rspace: -1.25rem
+}
 .mso-font-width-5 {
     mso-font-width: 1.25rem
 }
+.-mso-font-width-5 {
+    mso-font-width: -1.25rem
+}
 .mso-text-raise-6 {
     mso-text-raise: 1.5rem
+}
+.-mso-text-raise-6 {
+    mso-text-raise: -1.5rem
 }
 .mso-padding-alt-6 {
     mso-padding-alt: 1.5rem
@@ -586,35 +655,68 @@
 .mso-margin-alt-6 {
     mso-margin-alt: 1.5rem
 }
+.-mso-margin-alt-6 {
+    mso-margin-alt: -1.5rem
+}
 .mso-margin-top-alt-6 {
     mso-margin-top-alt: 1.5rem
+}
+.-mso-margin-top-alt-6 {
+    mso-margin-top-alt: -1.5rem
 }
 .mso-margin-right-alt-6 {
     mso-margin-right-alt: 1.5rem
 }
+.-mso-margin-right-alt-6 {
+    mso-margin-right-alt: -1.5rem
+}
 .mso-margin-bottom-alt-6 {
     mso-margin-bottom-alt: 1.5rem
+}
+.-mso-margin-bottom-alt-6 {
+    mso-margin-bottom-alt: -1.5rem
 }
 .mso-margin-left-alt-6 {
     mso-margin-left-alt: 1.5rem
 }
+.-mso-margin-left-alt-6 {
+    mso-margin-left-alt: -1.5rem
+}
 .mso-line-height-alt-6 {
     mso-line-height-alt: 1.5rem
+}
+.-mso-line-height-alt-6 {
+    mso-line-height-alt: -1.5rem
 }
 .mso-text-indent-alt-6 {
     mso-text-indent-alt: 1.5rem
 }
+.-mso-text-indent-alt-6 {
+    mso-text-indent-alt: -1.5rem
+}
 .mso-table-lspace-6 {
     mso-table-lspace: 1.5rem
+}
+.-mso-table-lspace-6 {
+    mso-table-lspace: -1.5rem
 }
 .mso-table-rspace-6 {
     mso-table-rspace: 1.5rem
 }
+.-mso-table-rspace-6 {
+    mso-table-rspace: -1.5rem
+}
 .mso-font-width-6 {
     mso-font-width: 1.5rem
 }
+.-mso-font-width-6 {
+    mso-font-width: -1.5rem
+}
 .mso-text-raise-7 {
     mso-text-raise: 1.75rem
+}
+.-mso-text-raise-7 {
+    mso-text-raise: -1.75rem
 }
 .mso-padding-alt-7 {
     mso-padding-alt: 1.75rem
@@ -634,35 +736,68 @@
 .mso-margin-alt-7 {
     mso-margin-alt: 1.75rem
 }
+.-mso-margin-alt-7 {
+    mso-margin-alt: -1.75rem
+}
 .mso-margin-top-alt-7 {
     mso-margin-top-alt: 1.75rem
+}
+.-mso-margin-top-alt-7 {
+    mso-margin-top-alt: -1.75rem
 }
 .mso-margin-right-alt-7 {
     mso-margin-right-alt: 1.75rem
 }
+.-mso-margin-right-alt-7 {
+    mso-margin-right-alt: -1.75rem
+}
 .mso-margin-bottom-alt-7 {
     mso-margin-bottom-alt: 1.75rem
+}
+.-mso-margin-bottom-alt-7 {
+    mso-margin-bottom-alt: -1.75rem
 }
 .mso-margin-left-alt-7 {
     mso-margin-left-alt: 1.75rem
 }
+.-mso-margin-left-alt-7 {
+    mso-margin-left-alt: -1.75rem
+}
 .mso-line-height-alt-7 {
     mso-line-height-alt: 1.75rem
+}
+.-mso-line-height-alt-7 {
+    mso-line-height-alt: -1.75rem
 }
 .mso-text-indent-alt-7 {
     mso-text-indent-alt: 1.75rem
 }
+.-mso-text-indent-alt-7 {
+    mso-text-indent-alt: -1.75rem
+}
 .mso-table-lspace-7 {
     mso-table-lspace: 1.75rem
+}
+.-mso-table-lspace-7 {
+    mso-table-lspace: -1.75rem
 }
 .mso-table-rspace-7 {
     mso-table-rspace: 1.75rem
 }
+.-mso-table-rspace-7 {
+    mso-table-rspace: -1.75rem
+}
 .mso-font-width-7 {
     mso-font-width: 1.75rem
 }
+.-mso-font-width-7 {
+    mso-font-width: -1.75rem
+}
 .mso-text-raise-8 {
     mso-text-raise: 2rem
+}
+.-mso-text-raise-8 {
+    mso-text-raise: -2rem
 }
 .mso-padding-alt-8 {
     mso-padding-alt: 2rem
@@ -682,35 +817,68 @@
 .mso-margin-alt-8 {
     mso-margin-alt: 2rem
 }
+.-mso-margin-alt-8 {
+    mso-margin-alt: -2rem
+}
 .mso-margin-top-alt-8 {
     mso-margin-top-alt: 2rem
+}
+.-mso-margin-top-alt-8 {
+    mso-margin-top-alt: -2rem
 }
 .mso-margin-right-alt-8 {
     mso-margin-right-alt: 2rem
 }
+.-mso-margin-right-alt-8 {
+    mso-margin-right-alt: -2rem
+}
 .mso-margin-bottom-alt-8 {
     mso-margin-bottom-alt: 2rem
+}
+.-mso-margin-bottom-alt-8 {
+    mso-margin-bottom-alt: -2rem
 }
 .mso-margin-left-alt-8 {
     mso-margin-left-alt: 2rem
 }
+.-mso-margin-left-alt-8 {
+    mso-margin-left-alt: -2rem
+}
 .mso-line-height-alt-8 {
     mso-line-height-alt: 2rem
+}
+.-mso-line-height-alt-8 {
+    mso-line-height-alt: -2rem
 }
 .mso-text-indent-alt-8 {
     mso-text-indent-alt: 2rem
 }
+.-mso-text-indent-alt-8 {
+    mso-text-indent-alt: -2rem
+}
 .mso-table-lspace-8 {
     mso-table-lspace: 2rem
+}
+.-mso-table-lspace-8 {
+    mso-table-lspace: -2rem
 }
 .mso-table-rspace-8 {
     mso-table-rspace: 2rem
 }
+.-mso-table-rspace-8 {
+    mso-table-rspace: -2rem
+}
 .mso-font-width-8 {
     mso-font-width: 2rem
 }
+.-mso-font-width-8 {
+    mso-font-width: -2rem
+}
 .mso-text-raise-9 {
     mso-text-raise: 2.25rem
+}
+.-mso-text-raise-9 {
+    mso-text-raise: -2.25rem
 }
 .mso-padding-alt-9 {
     mso-padding-alt: 2.25rem
@@ -730,35 +898,68 @@
 .mso-margin-alt-9 {
     mso-margin-alt: 2.25rem
 }
+.-mso-margin-alt-9 {
+    mso-margin-alt: -2.25rem
+}
 .mso-margin-top-alt-9 {
     mso-margin-top-alt: 2.25rem
+}
+.-mso-margin-top-alt-9 {
+    mso-margin-top-alt: -2.25rem
 }
 .mso-margin-right-alt-9 {
     mso-margin-right-alt: 2.25rem
 }
+.-mso-margin-right-alt-9 {
+    mso-margin-right-alt: -2.25rem
+}
 .mso-margin-bottom-alt-9 {
     mso-margin-bottom-alt: 2.25rem
+}
+.-mso-margin-bottom-alt-9 {
+    mso-margin-bottom-alt: -2.25rem
 }
 .mso-margin-left-alt-9 {
     mso-margin-left-alt: 2.25rem
 }
+.-mso-margin-left-alt-9 {
+    mso-margin-left-alt: -2.25rem
+}
 .mso-line-height-alt-9 {
     mso-line-height-alt: 2.25rem
+}
+.-mso-line-height-alt-9 {
+    mso-line-height-alt: -2.25rem
 }
 .mso-text-indent-alt-9 {
     mso-text-indent-alt: 2.25rem
 }
+.-mso-text-indent-alt-9 {
+    mso-text-indent-alt: -2.25rem
+}
 .mso-table-lspace-9 {
     mso-table-lspace: 2.25rem
+}
+.-mso-table-lspace-9 {
+    mso-table-lspace: -2.25rem
 }
 .mso-table-rspace-9 {
     mso-table-rspace: 2.25rem
 }
+.-mso-table-rspace-9 {
+    mso-table-rspace: -2.25rem
+}
 .mso-font-width-9 {
     mso-font-width: 2.25rem
 }
+.-mso-font-width-9 {
+    mso-font-width: -2.25rem
+}
 .mso-text-raise-10 {
     mso-text-raise: 2.5rem
+}
+.-mso-text-raise-10 {
+    mso-text-raise: -2.5rem
 }
 .mso-padding-alt-10 {
     mso-padding-alt: 2.5rem
@@ -778,35 +979,68 @@
 .mso-margin-alt-10 {
     mso-margin-alt: 2.5rem
 }
+.-mso-margin-alt-10 {
+    mso-margin-alt: -2.5rem
+}
 .mso-margin-top-alt-10 {
     mso-margin-top-alt: 2.5rem
+}
+.-mso-margin-top-alt-10 {
+    mso-margin-top-alt: -2.5rem
 }
 .mso-margin-right-alt-10 {
     mso-margin-right-alt: 2.5rem
 }
+.-mso-margin-right-alt-10 {
+    mso-margin-right-alt: -2.5rem
+}
 .mso-margin-bottom-alt-10 {
     mso-margin-bottom-alt: 2.5rem
+}
+.-mso-margin-bottom-alt-10 {
+    mso-margin-bottom-alt: -2.5rem
 }
 .mso-margin-left-alt-10 {
     mso-margin-left-alt: 2.5rem
 }
+.-mso-margin-left-alt-10 {
+    mso-margin-left-alt: -2.5rem
+}
 .mso-line-height-alt-10 {
     mso-line-height-alt: 2.5rem
+}
+.-mso-line-height-alt-10 {
+    mso-line-height-alt: -2.5rem
 }
 .mso-text-indent-alt-10 {
     mso-text-indent-alt: 2.5rem
 }
+.-mso-text-indent-alt-10 {
+    mso-text-indent-alt: -2.5rem
+}
 .mso-table-lspace-10 {
     mso-table-lspace: 2.5rem
+}
+.-mso-table-lspace-10 {
+    mso-table-lspace: -2.5rem
 }
 .mso-table-rspace-10 {
     mso-table-rspace: 2.5rem
 }
+.-mso-table-rspace-10 {
+    mso-table-rspace: -2.5rem
+}
 .mso-font-width-10 {
     mso-font-width: 2.5rem
 }
+.-mso-font-width-10 {
+    mso-font-width: -2.5rem
+}
 .mso-text-raise-11 {
     mso-text-raise: 2.75rem
+}
+.-mso-text-raise-11 {
+    mso-text-raise: -2.75rem
 }
 .mso-padding-alt-11 {
     mso-padding-alt: 2.75rem
@@ -826,35 +1060,68 @@
 .mso-margin-alt-11 {
     mso-margin-alt: 2.75rem
 }
+.-mso-margin-alt-11 {
+    mso-margin-alt: -2.75rem
+}
 .mso-margin-top-alt-11 {
     mso-margin-top-alt: 2.75rem
+}
+.-mso-margin-top-alt-11 {
+    mso-margin-top-alt: -2.75rem
 }
 .mso-margin-right-alt-11 {
     mso-margin-right-alt: 2.75rem
 }
+.-mso-margin-right-alt-11 {
+    mso-margin-right-alt: -2.75rem
+}
 .mso-margin-bottom-alt-11 {
     mso-margin-bottom-alt: 2.75rem
+}
+.-mso-margin-bottom-alt-11 {
+    mso-margin-bottom-alt: -2.75rem
 }
 .mso-margin-left-alt-11 {
     mso-margin-left-alt: 2.75rem
 }
+.-mso-margin-left-alt-11 {
+    mso-margin-left-alt: -2.75rem
+}
 .mso-line-height-alt-11 {
     mso-line-height-alt: 2.75rem
+}
+.-mso-line-height-alt-11 {
+    mso-line-height-alt: -2.75rem
 }
 .mso-text-indent-alt-11 {
     mso-text-indent-alt: 2.75rem
 }
+.-mso-text-indent-alt-11 {
+    mso-text-indent-alt: -2.75rem
+}
 .mso-table-lspace-11 {
     mso-table-lspace: 2.75rem
+}
+.-mso-table-lspace-11 {
+    mso-table-lspace: -2.75rem
 }
 .mso-table-rspace-11 {
     mso-table-rspace: 2.75rem
 }
+.-mso-table-rspace-11 {
+    mso-table-rspace: -2.75rem
+}
 .mso-font-width-11 {
     mso-font-width: 2.75rem
 }
+.-mso-font-width-11 {
+    mso-font-width: -2.75rem
+}
 .mso-text-raise-12 {
     mso-text-raise: 3rem
+}
+.-mso-text-raise-12 {
+    mso-text-raise: -3rem
 }
 .mso-padding-alt-12 {
     mso-padding-alt: 3rem
@@ -874,35 +1141,68 @@
 .mso-margin-alt-12 {
     mso-margin-alt: 3rem
 }
+.-mso-margin-alt-12 {
+    mso-margin-alt: -3rem
+}
 .mso-margin-top-alt-12 {
     mso-margin-top-alt: 3rem
+}
+.-mso-margin-top-alt-12 {
+    mso-margin-top-alt: -3rem
 }
 .mso-margin-right-alt-12 {
     mso-margin-right-alt: 3rem
 }
+.-mso-margin-right-alt-12 {
+    mso-margin-right-alt: -3rem
+}
 .mso-margin-bottom-alt-12 {
     mso-margin-bottom-alt: 3rem
+}
+.-mso-margin-bottom-alt-12 {
+    mso-margin-bottom-alt: -3rem
 }
 .mso-margin-left-alt-12 {
     mso-margin-left-alt: 3rem
 }
+.-mso-margin-left-alt-12 {
+    mso-margin-left-alt: -3rem
+}
 .mso-line-height-alt-12 {
     mso-line-height-alt: 3rem
+}
+.-mso-line-height-alt-12 {
+    mso-line-height-alt: -3rem
 }
 .mso-text-indent-alt-12 {
     mso-text-indent-alt: 3rem
 }
+.-mso-text-indent-alt-12 {
+    mso-text-indent-alt: -3rem
+}
 .mso-table-lspace-12 {
     mso-table-lspace: 3rem
+}
+.-mso-table-lspace-12 {
+    mso-table-lspace: -3rem
 }
 .mso-table-rspace-12 {
     mso-table-rspace: 3rem
 }
+.-mso-table-rspace-12 {
+    mso-table-rspace: -3rem
+}
 .mso-font-width-12 {
     mso-font-width: 3rem
 }
+.-mso-font-width-12 {
+    mso-font-width: -3rem
+}
 .mso-text-raise-14 {
     mso-text-raise: 3.5rem
+}
+.-mso-text-raise-14 {
+    mso-text-raise: -3.5rem
 }
 .mso-padding-alt-14 {
     mso-padding-alt: 3.5rem
@@ -922,35 +1222,68 @@
 .mso-margin-alt-14 {
     mso-margin-alt: 3.5rem
 }
+.-mso-margin-alt-14 {
+    mso-margin-alt: -3.5rem
+}
 .mso-margin-top-alt-14 {
     mso-margin-top-alt: 3.5rem
+}
+.-mso-margin-top-alt-14 {
+    mso-margin-top-alt: -3.5rem
 }
 .mso-margin-right-alt-14 {
     mso-margin-right-alt: 3.5rem
 }
+.-mso-margin-right-alt-14 {
+    mso-margin-right-alt: -3.5rem
+}
 .mso-margin-bottom-alt-14 {
     mso-margin-bottom-alt: 3.5rem
+}
+.-mso-margin-bottom-alt-14 {
+    mso-margin-bottom-alt: -3.5rem
 }
 .mso-margin-left-alt-14 {
     mso-margin-left-alt: 3.5rem
 }
+.-mso-margin-left-alt-14 {
+    mso-margin-left-alt: -3.5rem
+}
 .mso-line-height-alt-14 {
     mso-line-height-alt: 3.5rem
+}
+.-mso-line-height-alt-14 {
+    mso-line-height-alt: -3.5rem
 }
 .mso-text-indent-alt-14 {
     mso-text-indent-alt: 3.5rem
 }
+.-mso-text-indent-alt-14 {
+    mso-text-indent-alt: -3.5rem
+}
 .mso-table-lspace-14 {
     mso-table-lspace: 3.5rem
+}
+.-mso-table-lspace-14 {
+    mso-table-lspace: -3.5rem
 }
 .mso-table-rspace-14 {
     mso-table-rspace: 3.5rem
 }
+.-mso-table-rspace-14 {
+    mso-table-rspace: -3.5rem
+}
 .mso-font-width-14 {
     mso-font-width: 3.5rem
 }
+.-mso-font-width-14 {
+    mso-font-width: -3.5rem
+}
 .mso-text-raise-16 {
     mso-text-raise: 4rem
+}
+.-mso-text-raise-16 {
+    mso-text-raise: -4rem
 }
 .mso-padding-alt-16 {
     mso-padding-alt: 4rem
@@ -970,35 +1303,68 @@
 .mso-margin-alt-16 {
     mso-margin-alt: 4rem
 }
+.-mso-margin-alt-16 {
+    mso-margin-alt: -4rem
+}
 .mso-margin-top-alt-16 {
     mso-margin-top-alt: 4rem
+}
+.-mso-margin-top-alt-16 {
+    mso-margin-top-alt: -4rem
 }
 .mso-margin-right-alt-16 {
     mso-margin-right-alt: 4rem
 }
+.-mso-margin-right-alt-16 {
+    mso-margin-right-alt: -4rem
+}
 .mso-margin-bottom-alt-16 {
     mso-margin-bottom-alt: 4rem
+}
+.-mso-margin-bottom-alt-16 {
+    mso-margin-bottom-alt: -4rem
 }
 .mso-margin-left-alt-16 {
     mso-margin-left-alt: 4rem
 }
+.-mso-margin-left-alt-16 {
+    mso-margin-left-alt: -4rem
+}
 .mso-line-height-alt-16 {
     mso-line-height-alt: 4rem
+}
+.-mso-line-height-alt-16 {
+    mso-line-height-alt: -4rem
 }
 .mso-text-indent-alt-16 {
     mso-text-indent-alt: 4rem
 }
+.-mso-text-indent-alt-16 {
+    mso-text-indent-alt: -4rem
+}
 .mso-table-lspace-16 {
     mso-table-lspace: 4rem
+}
+.-mso-table-lspace-16 {
+    mso-table-lspace: -4rem
 }
 .mso-table-rspace-16 {
     mso-table-rspace: 4rem
 }
+.-mso-table-rspace-16 {
+    mso-table-rspace: -4rem
+}
 .mso-font-width-16 {
     mso-font-width: 4rem
 }
+.-mso-font-width-16 {
+    mso-font-width: -4rem
+}
 .mso-text-raise-20 {
     mso-text-raise: 5rem
+}
+.-mso-text-raise-20 {
+    mso-text-raise: -5rem
 }
 .mso-padding-alt-20 {
     mso-padding-alt: 5rem
@@ -1018,35 +1384,68 @@
 .mso-margin-alt-20 {
     mso-margin-alt: 5rem
 }
+.-mso-margin-alt-20 {
+    mso-margin-alt: -5rem
+}
 .mso-margin-top-alt-20 {
     mso-margin-top-alt: 5rem
+}
+.-mso-margin-top-alt-20 {
+    mso-margin-top-alt: -5rem
 }
 .mso-margin-right-alt-20 {
     mso-margin-right-alt: 5rem
 }
+.-mso-margin-right-alt-20 {
+    mso-margin-right-alt: -5rem
+}
 .mso-margin-bottom-alt-20 {
     mso-margin-bottom-alt: 5rem
+}
+.-mso-margin-bottom-alt-20 {
+    mso-margin-bottom-alt: -5rem
 }
 .mso-margin-left-alt-20 {
     mso-margin-left-alt: 5rem
 }
+.-mso-margin-left-alt-20 {
+    mso-margin-left-alt: -5rem
+}
 .mso-line-height-alt-20 {
     mso-line-height-alt: 5rem
+}
+.-mso-line-height-alt-20 {
+    mso-line-height-alt: -5rem
 }
 .mso-text-indent-alt-20 {
     mso-text-indent-alt: 5rem
 }
+.-mso-text-indent-alt-20 {
+    mso-text-indent-alt: -5rem
+}
 .mso-table-lspace-20 {
     mso-table-lspace: 5rem
+}
+.-mso-table-lspace-20 {
+    mso-table-lspace: -5rem
 }
 .mso-table-rspace-20 {
     mso-table-rspace: 5rem
 }
+.-mso-table-rspace-20 {
+    mso-table-rspace: -5rem
+}
 .mso-font-width-20 {
     mso-font-width: 5rem
 }
+.-mso-font-width-20 {
+    mso-font-width: -5rem
+}
 .mso-text-raise-24 {
     mso-text-raise: 6rem
+}
+.-mso-text-raise-24 {
+    mso-text-raise: -6rem
 }
 .mso-padding-alt-24 {
     mso-padding-alt: 6rem
@@ -1066,35 +1465,68 @@
 .mso-margin-alt-24 {
     mso-margin-alt: 6rem
 }
+.-mso-margin-alt-24 {
+    mso-margin-alt: -6rem
+}
 .mso-margin-top-alt-24 {
     mso-margin-top-alt: 6rem
+}
+.-mso-margin-top-alt-24 {
+    mso-margin-top-alt: -6rem
 }
 .mso-margin-right-alt-24 {
     mso-margin-right-alt: 6rem
 }
+.-mso-margin-right-alt-24 {
+    mso-margin-right-alt: -6rem
+}
 .mso-margin-bottom-alt-24 {
     mso-margin-bottom-alt: 6rem
+}
+.-mso-margin-bottom-alt-24 {
+    mso-margin-bottom-alt: -6rem
 }
 .mso-margin-left-alt-24 {
     mso-margin-left-alt: 6rem
 }
+.-mso-margin-left-alt-24 {
+    mso-margin-left-alt: -6rem
+}
 .mso-line-height-alt-24 {
     mso-line-height-alt: 6rem
+}
+.-mso-line-height-alt-24 {
+    mso-line-height-alt: -6rem
 }
 .mso-text-indent-alt-24 {
     mso-text-indent-alt: 6rem
 }
+.-mso-text-indent-alt-24 {
+    mso-text-indent-alt: -6rem
+}
 .mso-table-lspace-24 {
     mso-table-lspace: 6rem
+}
+.-mso-table-lspace-24 {
+    mso-table-lspace: -6rem
 }
 .mso-table-rspace-24 {
     mso-table-rspace: 6rem
 }
+.-mso-table-rspace-24 {
+    mso-table-rspace: -6rem
+}
 .mso-font-width-24 {
     mso-font-width: 6rem
 }
+.-mso-font-width-24 {
+    mso-font-width: -6rem
+}
 .mso-text-raise-28 {
     mso-text-raise: 7rem
+}
+.-mso-text-raise-28 {
+    mso-text-raise: -7rem
 }
 .mso-padding-alt-28 {
     mso-padding-alt: 7rem
@@ -1114,35 +1546,68 @@
 .mso-margin-alt-28 {
     mso-margin-alt: 7rem
 }
+.-mso-margin-alt-28 {
+    mso-margin-alt: -7rem
+}
 .mso-margin-top-alt-28 {
     mso-margin-top-alt: 7rem
+}
+.-mso-margin-top-alt-28 {
+    mso-margin-top-alt: -7rem
 }
 .mso-margin-right-alt-28 {
     mso-margin-right-alt: 7rem
 }
+.-mso-margin-right-alt-28 {
+    mso-margin-right-alt: -7rem
+}
 .mso-margin-bottom-alt-28 {
     mso-margin-bottom-alt: 7rem
+}
+.-mso-margin-bottom-alt-28 {
+    mso-margin-bottom-alt: -7rem
 }
 .mso-margin-left-alt-28 {
     mso-margin-left-alt: 7rem
 }
+.-mso-margin-left-alt-28 {
+    mso-margin-left-alt: -7rem
+}
 .mso-line-height-alt-28 {
     mso-line-height-alt: 7rem
+}
+.-mso-line-height-alt-28 {
+    mso-line-height-alt: -7rem
 }
 .mso-text-indent-alt-28 {
     mso-text-indent-alt: 7rem
 }
+.-mso-text-indent-alt-28 {
+    mso-text-indent-alt: -7rem
+}
 .mso-table-lspace-28 {
     mso-table-lspace: 7rem
+}
+.-mso-table-lspace-28 {
+    mso-table-lspace: -7rem
 }
 .mso-table-rspace-28 {
     mso-table-rspace: 7rem
 }
+.-mso-table-rspace-28 {
+    mso-table-rspace: -7rem
+}
 .mso-font-width-28 {
     mso-font-width: 7rem
 }
+.-mso-font-width-28 {
+    mso-font-width: -7rem
+}
 .mso-text-raise-32 {
     mso-text-raise: 8rem
+}
+.-mso-text-raise-32 {
+    mso-text-raise: -8rem
 }
 .mso-padding-alt-32 {
     mso-padding-alt: 8rem
@@ -1162,35 +1627,68 @@
 .mso-margin-alt-32 {
     mso-margin-alt: 8rem
 }
+.-mso-margin-alt-32 {
+    mso-margin-alt: -8rem
+}
 .mso-margin-top-alt-32 {
     mso-margin-top-alt: 8rem
+}
+.-mso-margin-top-alt-32 {
+    mso-margin-top-alt: -8rem
 }
 .mso-margin-right-alt-32 {
     mso-margin-right-alt: 8rem
 }
+.-mso-margin-right-alt-32 {
+    mso-margin-right-alt: -8rem
+}
 .mso-margin-bottom-alt-32 {
     mso-margin-bottom-alt: 8rem
+}
+.-mso-margin-bottom-alt-32 {
+    mso-margin-bottom-alt: -8rem
 }
 .mso-margin-left-alt-32 {
     mso-margin-left-alt: 8rem
 }
+.-mso-margin-left-alt-32 {
+    mso-margin-left-alt: -8rem
+}
 .mso-line-height-alt-32 {
     mso-line-height-alt: 8rem
+}
+.-mso-line-height-alt-32 {
+    mso-line-height-alt: -8rem
 }
 .mso-text-indent-alt-32 {
     mso-text-indent-alt: 8rem
 }
+.-mso-text-indent-alt-32 {
+    mso-text-indent-alt: -8rem
+}
 .mso-table-lspace-32 {
     mso-table-lspace: 8rem
+}
+.-mso-table-lspace-32 {
+    mso-table-lspace: -8rem
 }
 .mso-table-rspace-32 {
     mso-table-rspace: 8rem
 }
+.-mso-table-rspace-32 {
+    mso-table-rspace: -8rem
+}
 .mso-font-width-32 {
     mso-font-width: 8rem
 }
+.-mso-font-width-32 {
+    mso-font-width: -8rem
+}
 .mso-text-raise-36 {
     mso-text-raise: 9rem
+}
+.-mso-text-raise-36 {
+    mso-text-raise: -9rem
 }
 .mso-padding-alt-36 {
     mso-padding-alt: 9rem
@@ -1210,35 +1708,68 @@
 .mso-margin-alt-36 {
     mso-margin-alt: 9rem
 }
+.-mso-margin-alt-36 {
+    mso-margin-alt: -9rem
+}
 .mso-margin-top-alt-36 {
     mso-margin-top-alt: 9rem
+}
+.-mso-margin-top-alt-36 {
+    mso-margin-top-alt: -9rem
 }
 .mso-margin-right-alt-36 {
     mso-margin-right-alt: 9rem
 }
+.-mso-margin-right-alt-36 {
+    mso-margin-right-alt: -9rem
+}
 .mso-margin-bottom-alt-36 {
     mso-margin-bottom-alt: 9rem
+}
+.-mso-margin-bottom-alt-36 {
+    mso-margin-bottom-alt: -9rem
 }
 .mso-margin-left-alt-36 {
     mso-margin-left-alt: 9rem
 }
+.-mso-margin-left-alt-36 {
+    mso-margin-left-alt: -9rem
+}
 .mso-line-height-alt-36 {
     mso-line-height-alt: 9rem
+}
+.-mso-line-height-alt-36 {
+    mso-line-height-alt: -9rem
 }
 .mso-text-indent-alt-36 {
     mso-text-indent-alt: 9rem
 }
+.-mso-text-indent-alt-36 {
+    mso-text-indent-alt: -9rem
+}
 .mso-table-lspace-36 {
     mso-table-lspace: 9rem
+}
+.-mso-table-lspace-36 {
+    mso-table-lspace: -9rem
 }
 .mso-table-rspace-36 {
     mso-table-rspace: 9rem
 }
+.-mso-table-rspace-36 {
+    mso-table-rspace: -9rem
+}
 .mso-font-width-36 {
     mso-font-width: 9rem
 }
+.-mso-font-width-36 {
+    mso-font-width: -9rem
+}
 .mso-text-raise-40 {
     mso-text-raise: 10rem
+}
+.-mso-text-raise-40 {
+    mso-text-raise: -10rem
 }
 .mso-padding-alt-40 {
     mso-padding-alt: 10rem
@@ -1258,35 +1789,68 @@
 .mso-margin-alt-40 {
     mso-margin-alt: 10rem
 }
+.-mso-margin-alt-40 {
+    mso-margin-alt: -10rem
+}
 .mso-margin-top-alt-40 {
     mso-margin-top-alt: 10rem
+}
+.-mso-margin-top-alt-40 {
+    mso-margin-top-alt: -10rem
 }
 .mso-margin-right-alt-40 {
     mso-margin-right-alt: 10rem
 }
+.-mso-margin-right-alt-40 {
+    mso-margin-right-alt: -10rem
+}
 .mso-margin-bottom-alt-40 {
     mso-margin-bottom-alt: 10rem
+}
+.-mso-margin-bottom-alt-40 {
+    mso-margin-bottom-alt: -10rem
 }
 .mso-margin-left-alt-40 {
     mso-margin-left-alt: 10rem
 }
+.-mso-margin-left-alt-40 {
+    mso-margin-left-alt: -10rem
+}
 .mso-line-height-alt-40 {
     mso-line-height-alt: 10rem
+}
+.-mso-line-height-alt-40 {
+    mso-line-height-alt: -10rem
 }
 .mso-text-indent-alt-40 {
     mso-text-indent-alt: 10rem
 }
+.-mso-text-indent-alt-40 {
+    mso-text-indent-alt: -10rem
+}
 .mso-table-lspace-40 {
     mso-table-lspace: 10rem
+}
+.-mso-table-lspace-40 {
+    mso-table-lspace: -10rem
 }
 .mso-table-rspace-40 {
     mso-table-rspace: 10rem
 }
+.-mso-table-rspace-40 {
+    mso-table-rspace: -10rem
+}
 .mso-font-width-40 {
     mso-font-width: 10rem
 }
+.-mso-font-width-40 {
+    mso-font-width: -10rem
+}
 .mso-text-raise-44 {
     mso-text-raise: 11rem
+}
+.-mso-text-raise-44 {
+    mso-text-raise: -11rem
 }
 .mso-padding-alt-44 {
     mso-padding-alt: 11rem
@@ -1306,35 +1870,68 @@
 .mso-margin-alt-44 {
     mso-margin-alt: 11rem
 }
+.-mso-margin-alt-44 {
+    mso-margin-alt: -11rem
+}
 .mso-margin-top-alt-44 {
     mso-margin-top-alt: 11rem
+}
+.-mso-margin-top-alt-44 {
+    mso-margin-top-alt: -11rem
 }
 .mso-margin-right-alt-44 {
     mso-margin-right-alt: 11rem
 }
+.-mso-margin-right-alt-44 {
+    mso-margin-right-alt: -11rem
+}
 .mso-margin-bottom-alt-44 {
     mso-margin-bottom-alt: 11rem
+}
+.-mso-margin-bottom-alt-44 {
+    mso-margin-bottom-alt: -11rem
 }
 .mso-margin-left-alt-44 {
     mso-margin-left-alt: 11rem
 }
+.-mso-margin-left-alt-44 {
+    mso-margin-left-alt: -11rem
+}
 .mso-line-height-alt-44 {
     mso-line-height-alt: 11rem
+}
+.-mso-line-height-alt-44 {
+    mso-line-height-alt: -11rem
 }
 .mso-text-indent-alt-44 {
     mso-text-indent-alt: 11rem
 }
+.-mso-text-indent-alt-44 {
+    mso-text-indent-alt: -11rem
+}
 .mso-table-lspace-44 {
     mso-table-lspace: 11rem
+}
+.-mso-table-lspace-44 {
+    mso-table-lspace: -11rem
 }
 .mso-table-rspace-44 {
     mso-table-rspace: 11rem
 }
+.-mso-table-rspace-44 {
+    mso-table-rspace: -11rem
+}
 .mso-font-width-44 {
     mso-font-width: 11rem
 }
+.-mso-font-width-44 {
+    mso-font-width: -11rem
+}
 .mso-text-raise-48 {
     mso-text-raise: 12rem
+}
+.-mso-text-raise-48 {
+    mso-text-raise: -12rem
 }
 .mso-padding-alt-48 {
     mso-padding-alt: 12rem
@@ -1354,35 +1951,68 @@
 .mso-margin-alt-48 {
     mso-margin-alt: 12rem
 }
+.-mso-margin-alt-48 {
+    mso-margin-alt: -12rem
+}
 .mso-margin-top-alt-48 {
     mso-margin-top-alt: 12rem
+}
+.-mso-margin-top-alt-48 {
+    mso-margin-top-alt: -12rem
 }
 .mso-margin-right-alt-48 {
     mso-margin-right-alt: 12rem
 }
+.-mso-margin-right-alt-48 {
+    mso-margin-right-alt: -12rem
+}
 .mso-margin-bottom-alt-48 {
     mso-margin-bottom-alt: 12rem
+}
+.-mso-margin-bottom-alt-48 {
+    mso-margin-bottom-alt: -12rem
 }
 .mso-margin-left-alt-48 {
     mso-margin-left-alt: 12rem
 }
+.-mso-margin-left-alt-48 {
+    mso-margin-left-alt: -12rem
+}
 .mso-line-height-alt-48 {
     mso-line-height-alt: 12rem
+}
+.-mso-line-height-alt-48 {
+    mso-line-height-alt: -12rem
 }
 .mso-text-indent-alt-48 {
     mso-text-indent-alt: 12rem
 }
+.-mso-text-indent-alt-48 {
+    mso-text-indent-alt: -12rem
+}
 .mso-table-lspace-48 {
     mso-table-lspace: 12rem
+}
+.-mso-table-lspace-48 {
+    mso-table-lspace: -12rem
 }
 .mso-table-rspace-48 {
     mso-table-rspace: 12rem
 }
+.-mso-table-rspace-48 {
+    mso-table-rspace: -12rem
+}
 .mso-font-width-48 {
     mso-font-width: 12rem
 }
+.-mso-font-width-48 {
+    mso-font-width: -12rem
+}
 .mso-text-raise-52 {
     mso-text-raise: 13rem
+}
+.-mso-text-raise-52 {
+    mso-text-raise: -13rem
 }
 .mso-padding-alt-52 {
     mso-padding-alt: 13rem
@@ -1402,35 +2032,68 @@
 .mso-margin-alt-52 {
     mso-margin-alt: 13rem
 }
+.-mso-margin-alt-52 {
+    mso-margin-alt: -13rem
+}
 .mso-margin-top-alt-52 {
     mso-margin-top-alt: 13rem
+}
+.-mso-margin-top-alt-52 {
+    mso-margin-top-alt: -13rem
 }
 .mso-margin-right-alt-52 {
     mso-margin-right-alt: 13rem
 }
+.-mso-margin-right-alt-52 {
+    mso-margin-right-alt: -13rem
+}
 .mso-margin-bottom-alt-52 {
     mso-margin-bottom-alt: 13rem
+}
+.-mso-margin-bottom-alt-52 {
+    mso-margin-bottom-alt: -13rem
 }
 .mso-margin-left-alt-52 {
     mso-margin-left-alt: 13rem
 }
+.-mso-margin-left-alt-52 {
+    mso-margin-left-alt: -13rem
+}
 .mso-line-height-alt-52 {
     mso-line-height-alt: 13rem
+}
+.-mso-line-height-alt-52 {
+    mso-line-height-alt: -13rem
 }
 .mso-text-indent-alt-52 {
     mso-text-indent-alt: 13rem
 }
+.-mso-text-indent-alt-52 {
+    mso-text-indent-alt: -13rem
+}
 .mso-table-lspace-52 {
     mso-table-lspace: 13rem
+}
+.-mso-table-lspace-52 {
+    mso-table-lspace: -13rem
 }
 .mso-table-rspace-52 {
     mso-table-rspace: 13rem
 }
+.-mso-table-rspace-52 {
+    mso-table-rspace: -13rem
+}
 .mso-font-width-52 {
     mso-font-width: 13rem
 }
+.-mso-font-width-52 {
+    mso-font-width: -13rem
+}
 .mso-text-raise-56 {
     mso-text-raise: 14rem
+}
+.-mso-text-raise-56 {
+    mso-text-raise: -14rem
 }
 .mso-padding-alt-56 {
     mso-padding-alt: 14rem
@@ -1450,35 +2113,68 @@
 .mso-margin-alt-56 {
     mso-margin-alt: 14rem
 }
+.-mso-margin-alt-56 {
+    mso-margin-alt: -14rem
+}
 .mso-margin-top-alt-56 {
     mso-margin-top-alt: 14rem
+}
+.-mso-margin-top-alt-56 {
+    mso-margin-top-alt: -14rem
 }
 .mso-margin-right-alt-56 {
     mso-margin-right-alt: 14rem
 }
+.-mso-margin-right-alt-56 {
+    mso-margin-right-alt: -14rem
+}
 .mso-margin-bottom-alt-56 {
     mso-margin-bottom-alt: 14rem
+}
+.-mso-margin-bottom-alt-56 {
+    mso-margin-bottom-alt: -14rem
 }
 .mso-margin-left-alt-56 {
     mso-margin-left-alt: 14rem
 }
+.-mso-margin-left-alt-56 {
+    mso-margin-left-alt: -14rem
+}
 .mso-line-height-alt-56 {
     mso-line-height-alt: 14rem
+}
+.-mso-line-height-alt-56 {
+    mso-line-height-alt: -14rem
 }
 .mso-text-indent-alt-56 {
     mso-text-indent-alt: 14rem
 }
+.-mso-text-indent-alt-56 {
+    mso-text-indent-alt: -14rem
+}
 .mso-table-lspace-56 {
     mso-table-lspace: 14rem
+}
+.-mso-table-lspace-56 {
+    mso-table-lspace: -14rem
 }
 .mso-table-rspace-56 {
     mso-table-rspace: 14rem
 }
+.-mso-table-rspace-56 {
+    mso-table-rspace: -14rem
+}
 .mso-font-width-56 {
     mso-font-width: 14rem
 }
+.-mso-font-width-56 {
+    mso-font-width: -14rem
+}
 .mso-text-raise-60 {
     mso-text-raise: 15rem
+}
+.-mso-text-raise-60 {
+    mso-text-raise: -15rem
 }
 .mso-padding-alt-60 {
     mso-padding-alt: 15rem
@@ -1498,35 +2194,68 @@
 .mso-margin-alt-60 {
     mso-margin-alt: 15rem
 }
+.-mso-margin-alt-60 {
+    mso-margin-alt: -15rem
+}
 .mso-margin-top-alt-60 {
     mso-margin-top-alt: 15rem
+}
+.-mso-margin-top-alt-60 {
+    mso-margin-top-alt: -15rem
 }
 .mso-margin-right-alt-60 {
     mso-margin-right-alt: 15rem
 }
+.-mso-margin-right-alt-60 {
+    mso-margin-right-alt: -15rem
+}
 .mso-margin-bottom-alt-60 {
     mso-margin-bottom-alt: 15rem
+}
+.-mso-margin-bottom-alt-60 {
+    mso-margin-bottom-alt: -15rem
 }
 .mso-margin-left-alt-60 {
     mso-margin-left-alt: 15rem
 }
+.-mso-margin-left-alt-60 {
+    mso-margin-left-alt: -15rem
+}
 .mso-line-height-alt-60 {
     mso-line-height-alt: 15rem
+}
+.-mso-line-height-alt-60 {
+    mso-line-height-alt: -15rem
 }
 .mso-text-indent-alt-60 {
     mso-text-indent-alt: 15rem
 }
+.-mso-text-indent-alt-60 {
+    mso-text-indent-alt: -15rem
+}
 .mso-table-lspace-60 {
     mso-table-lspace: 15rem
+}
+.-mso-table-lspace-60 {
+    mso-table-lspace: -15rem
 }
 .mso-table-rspace-60 {
     mso-table-rspace: 15rem
 }
+.-mso-table-rspace-60 {
+    mso-table-rspace: -15rem
+}
 .mso-font-width-60 {
     mso-font-width: 15rem
 }
+.-mso-font-width-60 {
+    mso-font-width: -15rem
+}
 .mso-text-raise-64 {
     mso-text-raise: 16rem
+}
+.-mso-text-raise-64 {
+    mso-text-raise: -16rem
 }
 .mso-padding-alt-64 {
     mso-padding-alt: 16rem
@@ -1546,35 +2275,68 @@
 .mso-margin-alt-64 {
     mso-margin-alt: 16rem
 }
+.-mso-margin-alt-64 {
+    mso-margin-alt: -16rem
+}
 .mso-margin-top-alt-64 {
     mso-margin-top-alt: 16rem
+}
+.-mso-margin-top-alt-64 {
+    mso-margin-top-alt: -16rem
 }
 .mso-margin-right-alt-64 {
     mso-margin-right-alt: 16rem
 }
+.-mso-margin-right-alt-64 {
+    mso-margin-right-alt: -16rem
+}
 .mso-margin-bottom-alt-64 {
     mso-margin-bottom-alt: 16rem
+}
+.-mso-margin-bottom-alt-64 {
+    mso-margin-bottom-alt: -16rem
 }
 .mso-margin-left-alt-64 {
     mso-margin-left-alt: 16rem
 }
+.-mso-margin-left-alt-64 {
+    mso-margin-left-alt: -16rem
+}
 .mso-line-height-alt-64 {
     mso-line-height-alt: 16rem
+}
+.-mso-line-height-alt-64 {
+    mso-line-height-alt: -16rem
 }
 .mso-text-indent-alt-64 {
     mso-text-indent-alt: 16rem
 }
+.-mso-text-indent-alt-64 {
+    mso-text-indent-alt: -16rem
+}
 .mso-table-lspace-64 {
     mso-table-lspace: 16rem
+}
+.-mso-table-lspace-64 {
+    mso-table-lspace: -16rem
 }
 .mso-table-rspace-64 {
     mso-table-rspace: 16rem
 }
+.-mso-table-rspace-64 {
+    mso-table-rspace: -16rem
+}
 .mso-font-width-64 {
     mso-font-width: 16rem
 }
+.-mso-font-width-64 {
+    mso-font-width: -16rem
+}
 .mso-text-raise-72 {
     mso-text-raise: 18rem
+}
+.-mso-text-raise-72 {
+    mso-text-raise: -18rem
 }
 .mso-padding-alt-72 {
     mso-padding-alt: 18rem
@@ -1594,35 +2356,68 @@
 .mso-margin-alt-72 {
     mso-margin-alt: 18rem
 }
+.-mso-margin-alt-72 {
+    mso-margin-alt: -18rem
+}
 .mso-margin-top-alt-72 {
     mso-margin-top-alt: 18rem
+}
+.-mso-margin-top-alt-72 {
+    mso-margin-top-alt: -18rem
 }
 .mso-margin-right-alt-72 {
     mso-margin-right-alt: 18rem
 }
+.-mso-margin-right-alt-72 {
+    mso-margin-right-alt: -18rem
+}
 .mso-margin-bottom-alt-72 {
     mso-margin-bottom-alt: 18rem
+}
+.-mso-margin-bottom-alt-72 {
+    mso-margin-bottom-alt: -18rem
 }
 .mso-margin-left-alt-72 {
     mso-margin-left-alt: 18rem
 }
+.-mso-margin-left-alt-72 {
+    mso-margin-left-alt: -18rem
+}
 .mso-line-height-alt-72 {
     mso-line-height-alt: 18rem
+}
+.-mso-line-height-alt-72 {
+    mso-line-height-alt: -18rem
 }
 .mso-text-indent-alt-72 {
     mso-text-indent-alt: 18rem
 }
+.-mso-text-indent-alt-72 {
+    mso-text-indent-alt: -18rem
+}
 .mso-table-lspace-72 {
     mso-table-lspace: 18rem
+}
+.-mso-table-lspace-72 {
+    mso-table-lspace: -18rem
 }
 .mso-table-rspace-72 {
     mso-table-rspace: 18rem
 }
+.-mso-table-rspace-72 {
+    mso-table-rspace: -18rem
+}
 .mso-font-width-72 {
     mso-font-width: 18rem
 }
+.-mso-font-width-72 {
+    mso-font-width: -18rem
+}
 .mso-text-raise-80 {
     mso-text-raise: 20rem
+}
+.-mso-text-raise-80 {
+    mso-text-raise: -20rem
 }
 .mso-padding-alt-80 {
     mso-padding-alt: 20rem
@@ -1642,35 +2437,68 @@
 .mso-margin-alt-80 {
     mso-margin-alt: 20rem
 }
+.-mso-margin-alt-80 {
+    mso-margin-alt: -20rem
+}
 .mso-margin-top-alt-80 {
     mso-margin-top-alt: 20rem
+}
+.-mso-margin-top-alt-80 {
+    mso-margin-top-alt: -20rem
 }
 .mso-margin-right-alt-80 {
     mso-margin-right-alt: 20rem
 }
+.-mso-margin-right-alt-80 {
+    mso-margin-right-alt: -20rem
+}
 .mso-margin-bottom-alt-80 {
     mso-margin-bottom-alt: 20rem
+}
+.-mso-margin-bottom-alt-80 {
+    mso-margin-bottom-alt: -20rem
 }
 .mso-margin-left-alt-80 {
     mso-margin-left-alt: 20rem
 }
+.-mso-margin-left-alt-80 {
+    mso-margin-left-alt: -20rem
+}
 .mso-line-height-alt-80 {
     mso-line-height-alt: 20rem
+}
+.-mso-line-height-alt-80 {
+    mso-line-height-alt: -20rem
 }
 .mso-text-indent-alt-80 {
     mso-text-indent-alt: 20rem
 }
+.-mso-text-indent-alt-80 {
+    mso-text-indent-alt: -20rem
+}
 .mso-table-lspace-80 {
     mso-table-lspace: 20rem
+}
+.-mso-table-lspace-80 {
+    mso-table-lspace: -20rem
 }
 .mso-table-rspace-80 {
     mso-table-rspace: 20rem
 }
+.-mso-table-rspace-80 {
+    mso-table-rspace: -20rem
+}
 .mso-font-width-80 {
     mso-font-width: 20rem
 }
+.-mso-font-width-80 {
+    mso-font-width: -20rem
+}
 .mso-text-raise-96 {
     mso-text-raise: 24rem
+}
+.-mso-text-raise-96 {
+    mso-text-raise: -24rem
 }
 .mso-padding-alt-96 {
     mso-padding-alt: 24rem
@@ -1690,35 +2518,68 @@
 .mso-margin-alt-96 {
     mso-margin-alt: 24rem
 }
+.-mso-margin-alt-96 {
+    mso-margin-alt: -24rem
+}
 .mso-margin-top-alt-96 {
     mso-margin-top-alt: 24rem
+}
+.-mso-margin-top-alt-96 {
+    mso-margin-top-alt: -24rem
 }
 .mso-margin-right-alt-96 {
     mso-margin-right-alt: 24rem
 }
+.-mso-margin-right-alt-96 {
+    mso-margin-right-alt: -24rem
+}
 .mso-margin-bottom-alt-96 {
     mso-margin-bottom-alt: 24rem
+}
+.-mso-margin-bottom-alt-96 {
+    mso-margin-bottom-alt: -24rem
 }
 .mso-margin-left-alt-96 {
     mso-margin-left-alt: 24rem
 }
+.-mso-margin-left-alt-96 {
+    mso-margin-left-alt: -24rem
+}
 .mso-line-height-alt-96 {
     mso-line-height-alt: 24rem
+}
+.-mso-line-height-alt-96 {
+    mso-line-height-alt: -24rem
 }
 .mso-text-indent-alt-96 {
     mso-text-indent-alt: 24rem
 }
+.-mso-text-indent-alt-96 {
+    mso-text-indent-alt: -24rem
+}
 .mso-table-lspace-96 {
     mso-table-lspace: 24rem
+}
+.-mso-table-lspace-96 {
+    mso-table-lspace: -24rem
 }
 .mso-table-rspace-96 {
     mso-table-rspace: 24rem
 }
+.-mso-table-rspace-96 {
+    mso-table-rspace: -24rem
+}
 .mso-font-width-96 {
     mso-font-width: 24rem
 }
+.-mso-font-width-96 {
+    mso-font-width: -24rem
+}
 .mso-text-raise-px {
     mso-text-raise: 1px
+}
+.-mso-text-raise-px {
+    mso-text-raise: -1px
 }
 .mso-padding-alt-px {
     mso-padding-alt: 1px
@@ -1738,32 +2599,62 @@
 .mso-margin-alt-px {
     mso-margin-alt: 1px
 }
+.-mso-margin-alt-px {
+    mso-margin-alt: -1px
+}
 .mso-margin-top-alt-px {
     mso-margin-top-alt: 1px
+}
+.-mso-margin-top-alt-px {
+    mso-margin-top-alt: -1px
 }
 .mso-margin-right-alt-px {
     mso-margin-right-alt: 1px
 }
+.-mso-margin-right-alt-px {
+    mso-margin-right-alt: -1px
+}
 .mso-margin-bottom-alt-px {
     mso-margin-bottom-alt: 1px
+}
+.-mso-margin-bottom-alt-px {
+    mso-margin-bottom-alt: -1px
 }
 .mso-margin-left-alt-px {
     mso-margin-left-alt: 1px
 }
+.-mso-margin-left-alt-px {
+    mso-margin-left-alt: -1px
+}
 .mso-line-height-alt-px {
     mso-line-height-alt: 1px
+}
+.-mso-line-height-alt-px {
+    mso-line-height-alt: -1px
 }
 .mso-text-indent-alt-px {
     mso-text-indent-alt: 1px
 }
+.-mso-text-indent-alt-px {
+    mso-text-indent-alt: -1px
+}
 .mso-table-lspace-px {
     mso-table-lspace: 1px
+}
+.-mso-table-lspace-px {
+    mso-table-lspace: -1px
 }
 .mso-table-rspace-px {
     mso-table-rspace: 1px
 }
+.-mso-table-rspace-px {
+    mso-table-rspace: -1px
+}
 .mso-font-width-px {
     mso-font-width: 1px
+}
+.-mso-font-width-px {
+    mso-font-width: -1px
 }
 .mso-text-raise-0\.5 {
     mso-text-raise: 0.125rem

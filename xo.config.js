@@ -2,6 +2,7 @@ module.exports = {
   space: true,
   rules: {
     semi: 0,
+    'max-params': 0,
     'capitalized-comments': 0,
     'unicorn/string-content': 0,
     'unicorn/prefer-module': 0,
