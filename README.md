@@ -7,7 +7,7 @@
 
 A Tailwind CSS plugin that generates MSO utilities.
 
-Useful when styling HTML emails with Tailwind CSS, like in Maizzle.
+Useful when styling HTML emails with Tailwind CSS, like in [Maizzle](https://maizzle.com).
 
 ## Installation
 
