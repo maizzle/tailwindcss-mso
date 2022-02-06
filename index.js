@@ -76,6 +76,11 @@ const mso = plugin(
       newUtilities[`.${e(`mso-table-rspace-${key}`)}`] = {
         'mso-table-rspace': value,
       }
+
+      // mso-font-width
+      newUtilities[`.${e(`mso-font-width-${key}`)}`] = {
+        'mso-font-width': value,
+      }
     })
 
     // Font utilities

@@ -322,6 +322,9 @@
 .mso-table-rspace-0 {
     mso-table-rspace: 0px
 }
+.mso-font-width-0 {
+    mso-font-width: 0px
+}
 .mso-text-raise-1 {
     mso-text-raise: 0.25rem
 }
@@ -366,6 +369,9 @@
 }
 .mso-table-rspace-1 {
     mso-table-rspace: 0.25rem
+}
+.mso-font-width-1 {
+    mso-font-width: 0.25rem
 }
 .mso-text-raise-2 {
     mso-text-raise: 0.5rem
@@ -412,6 +418,9 @@
 .mso-table-rspace-2 {
     mso-table-rspace: 0.5rem
 }
+.mso-font-width-2 {
+    mso-font-width: 0.5rem
+}
 .mso-text-raise-3 {
     mso-text-raise: 0.75rem
 }
@@ -456,6 +465,9 @@
 }
 .mso-table-rspace-3 {
     mso-table-rspace: 0.75rem
+}
+.mso-font-width-3 {
+    mso-font-width: 0.75rem
 }
 .mso-text-raise-4 {
     mso-text-raise: 1rem
@@ -502,6 +514,9 @@
 .mso-table-rspace-4 {
     mso-table-rspace: 1rem
 }
+.mso-font-width-4 {
+    mso-font-width: 1rem
+}
 .mso-text-raise-5 {
     mso-text-raise: 1.25rem
 }
@@ -546,6 +561,9 @@
 }
 .mso-table-rspace-5 {
     mso-table-rspace: 1.25rem
+}
+.mso-font-width-5 {
+    mso-font-width: 1.25rem
 }
 .mso-text-raise-6 {
     mso-text-raise: 1.5rem
@@ -592,6 +610,9 @@
 .mso-table-rspace-6 {
     mso-table-rspace: 1.5rem
 }
+.mso-font-width-6 {
+    mso-font-width: 1.5rem
+}
 .mso-text-raise-7 {
     mso-text-raise: 1.75rem
 }
@@ -636,6 +657,9 @@
 }
 .mso-table-rspace-7 {
     mso-table-rspace: 1.75rem
+}
+.mso-font-width-7 {
+    mso-font-width: 1.75rem
 }
 .mso-text-raise-8 {
     mso-text-raise: 2rem
@@ -682,6 +706,9 @@
 .mso-table-rspace-8 {
     mso-table-rspace: 2rem
 }
+.mso-font-width-8 {
+    mso-font-width: 2rem
+}
 .mso-text-raise-9 {
     mso-text-raise: 2.25rem
 }
@@ -726,6 +753,9 @@
 }
 .mso-table-rspace-9 {
     mso-table-rspace: 2.25rem
+}
+.mso-font-width-9 {
+    mso-font-width: 2.25rem
 }
 .mso-text-raise-10 {
     mso-text-raise: 2.5rem
@@ -772,6 +802,9 @@
 .mso-table-rspace-10 {
     mso-table-rspace: 2.5rem
 }
+.mso-font-width-10 {
+    mso-font-width: 2.5rem
+}
 .mso-text-raise-11 {
     mso-text-raise: 2.75rem
 }
@@ -816,6 +849,9 @@
 }
 .mso-table-rspace-11 {
     mso-table-rspace: 2.75rem
+}
+.mso-font-width-11 {
+    mso-font-width: 2.75rem
 }
 .mso-text-raise-12 {
     mso-text-raise: 3rem
@@ -862,6 +898,9 @@
 .mso-table-rspace-12 {
     mso-table-rspace: 3rem
 }
+.mso-font-width-12 {
+    mso-font-width: 3rem
+}
 .mso-text-raise-14 {
     mso-text-raise: 3.5rem
 }
@@ -906,6 +945,9 @@
 }
 .mso-table-rspace-14 {
     mso-table-rspace: 3.5rem
+}
+.mso-font-width-14 {
+    mso-font-width: 3.5rem
 }
 .mso-text-raise-16 {
     mso-text-raise: 4rem
@@ -952,6 +994,9 @@
 .mso-table-rspace-16 {
     mso-table-rspace: 4rem
 }
+.mso-font-width-16 {
+    mso-font-width: 4rem
+}
 .mso-text-raise-20 {
     mso-text-raise: 5rem
 }
@@ -996,6 +1041,9 @@
 }
 .mso-table-rspace-20 {
     mso-table-rspace: 5rem
+}
+.mso-font-width-20 {
+    mso-font-width: 5rem
 }
 .mso-text-raise-24 {
     mso-text-raise: 6rem
@@ -1042,6 +1090,9 @@
 .mso-table-rspace-24 {
     mso-table-rspace: 6rem
 }
+.mso-font-width-24 {
+    mso-font-width: 6rem
+}
 .mso-text-raise-28 {
     mso-text-raise: 7rem
 }
@@ -1086,6 +1137,9 @@
 }
 .mso-table-rspace-28 {
     mso-table-rspace: 7rem
+}
+.mso-font-width-28 {
+    mso-font-width: 7rem
 }
 .mso-text-raise-32 {
     mso-text-raise: 8rem
@@ -1132,6 +1186,9 @@
 .mso-table-rspace-32 {
     mso-table-rspace: 8rem
 }
+.mso-font-width-32 {
+    mso-font-width: 8rem
+}
 .mso-text-raise-36 {
     mso-text-raise: 9rem
 }
@@ -1176,6 +1233,9 @@
 }
 .mso-table-rspace-36 {
     mso-table-rspace: 9rem
+}
+.mso-font-width-36 {
+    mso-font-width: 9rem
 }
 .mso-text-raise-40 {
     mso-text-raise: 10rem
@@ -1222,6 +1282,9 @@
 .mso-table-rspace-40 {
     mso-table-rspace: 10rem
 }
+.mso-font-width-40 {
+    mso-font-width: 10rem
+}
 .mso-text-raise-44 {
     mso-text-raise: 11rem
 }
@@ -1266,6 +1329,9 @@
 }
 .mso-table-rspace-44 {
     mso-table-rspace: 11rem
+}
+.mso-font-width-44 {
+    mso-font-width: 11rem
 }
 .mso-text-raise-48 {
     mso-text-raise: 12rem
@@ -1312,6 +1378,9 @@
 .mso-table-rspace-48 {
     mso-table-rspace: 12rem
 }
+.mso-font-width-48 {
+    mso-font-width: 12rem
+}
 .mso-text-raise-52 {
     mso-text-raise: 13rem
 }
@@ -1356,6 +1425,9 @@
 }
 .mso-table-rspace-52 {
     mso-table-rspace: 13rem
+}
+.mso-font-width-52 {
+    mso-font-width: 13rem
 }
 .mso-text-raise-56 {
     mso-text-raise: 14rem
@@ -1402,6 +1474,9 @@
 .mso-table-rspace-56 {
     mso-table-rspace: 14rem
 }
+.mso-font-width-56 {
+    mso-font-width: 14rem
+}
 .mso-text-raise-60 {
     mso-text-raise: 15rem
 }
@@ -1446,6 +1521,9 @@
 }
 .mso-table-rspace-60 {
     mso-table-rspace: 15rem
+}
+.mso-font-width-60 {
+    mso-font-width: 15rem
 }
 .mso-text-raise-64 {
     mso-text-raise: 16rem
@@ -1492,6 +1570,9 @@
 .mso-table-rspace-64 {
     mso-table-rspace: 16rem
 }
+.mso-font-width-64 {
+    mso-font-width: 16rem
+}
 .mso-text-raise-72 {
     mso-text-raise: 18rem
 }
@@ -1536,6 +1617,9 @@
 }
 .mso-table-rspace-72 {
     mso-table-rspace: 18rem
+}
+.mso-font-width-72 {
+    mso-font-width: 18rem
 }
 .mso-text-raise-80 {
     mso-text-raise: 20rem
@@ -1582,6 +1666,9 @@
 .mso-table-rspace-80 {
     mso-table-rspace: 20rem
 }
+.mso-font-width-80 {
+    mso-font-width: 20rem
+}
 .mso-text-raise-96 {
     mso-text-raise: 24rem
 }
@@ -1626,6 +1713,9 @@
 }
 .mso-table-rspace-96 {
     mso-table-rspace: 24rem
+}
+.mso-font-width-96 {
+    mso-font-width: 24rem
 }
 .mso-text-raise-px {
     mso-text-raise: 1px
@@ -1672,6 +1762,9 @@
 .mso-table-rspace-px {
     mso-table-rspace: 1px
 }
+.mso-font-width-px {
+    mso-font-width: 1px
+}
 .mso-text-raise-0\.5 {
     mso-text-raise: 0.125rem
 }
@@ -1716,6 +1809,9 @@
 }
 .mso-table-rspace-0\.5 {
     mso-table-rspace: 0.125rem
+}
+.mso-font-width-0\.5 {
+    mso-font-width: 0.125rem
 }
 .mso-text-raise-1\.5 {
     mso-text-raise: 0.375rem
@@ -1762,6 +1858,9 @@
 .mso-table-rspace-1\.5 {
     mso-table-rspace: 0.375rem
 }
+.mso-font-width-1\.5 {
+    mso-font-width: 0.375rem
+}
 .mso-text-raise-2\.5 {
     mso-text-raise: 0.625rem
 }
@@ -1807,6 +1906,9 @@
 .mso-table-rspace-2\.5 {
     mso-table-rspace: 0.625rem
 }
+.mso-font-width-2\.5 {
+    mso-font-width: 0.625rem
+}
 .mso-text-raise-3\.5 {
     mso-text-raise: 0.875rem
 }
@@ -1851,6 +1953,9 @@
 }
 .mso-table-rspace-3\.5 {
     mso-table-rspace: 0.875rem
+}
+.mso-font-width-3\.5 {
+    mso-font-width: 0.875rem
 }
 .mso-ansi-font-size-xs {
     mso-ansi-font-size: 0.75rem
