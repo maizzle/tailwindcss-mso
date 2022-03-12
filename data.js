@@ -18,5 +18,6 @@ module.exports = {
   'mso-line-height-rule': ['at-least', 'exactly'],
   'mso-line-height-alt': ['normal'],
   'text-underline-color': ['auto', 'windowtext'],
+  'text-underline-style': ['dash', 'dash-dot-dot-heavy', 'dash-dot-heavy', 'dashed-heavy', 'dash-long', 'dash-long-heavy', 'dot-dash', 'dot-dot-dash', 'dotted', 'dotted-heavy', 'double', 'double-accounting', 'none', 'single', 'single-accounting', 'thick', 'wave', 'wavy-double', 'wavy-heavy', 'words'],
   'mso-special-format': ['bullet'],
 }
