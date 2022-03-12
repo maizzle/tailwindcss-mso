@@ -72,11 +72,17 @@ const mso = plugin(
       // mso-text-indent-alt
       createUtilities('mso-text-indent-alt', 'mso-text-indent-alt', key, value, true)
 
-      // mso-table-lspace
-      createUtilities('mso-table-lspace', 'mso-table-lspace', key, value, true)
+      // mso-table-tspace
+      createUtilities('mso-table-tspace', 'mso-table-tspace', key, value, true)
 
       // mso-table-rspace
       createUtilities('mso-table-rspace', 'mso-table-rspace', key, value, true)
+
+      // mso-table-bspace
+      createUtilities('mso-table-bspace', 'mso-table-bspace', key, value, true)
+
+      // mso-table-lspace
+      createUtilities('mso-table-lspace', 'mso-table-lspace', key, value, true)
 
       // mso-font-width
       createUtilities('mso-font-width', 'mso-font-width', key, value, true)
