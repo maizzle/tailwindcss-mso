@@ -18,4 +18,5 @@ module.exports = {
   'mso-line-height-rule': ['at-least', 'exactly'],
   'mso-line-height-alt': ['normal'],
   'text-underline-color': ['auto', 'windowtext'],
+  'mso-special-format': ['bullet'],
 }
