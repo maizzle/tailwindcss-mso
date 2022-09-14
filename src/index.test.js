@@ -827,3 +827,29 @@ it('mso-font-width', () => {
     `)
   })
 })
+
+it('mso-shading', () => {
+  const config = {
+    content: [{
+      raw: String.raw`
+        <div class="mso-shading-auto"></div>
+        <div class="mso-shading-red-200"></div>
+        <div class="mso-shading-[#ffcc00]"></div>
+      `
+    }],
+  }
+
+  return run(config).then(result => {
+    expect(result.css).toMatchCss(String.raw`
+      .mso-shading-auto {
+        mso-shading: auto;
+      }
+      .mso-shading-red-200 {
+        mso-shading: #fecaca;
+      }
+      .mso-shading-\[\#ffcc00\] {
+        mso-shading: #ffcc00;
+      }
+    `)
+  })
+})

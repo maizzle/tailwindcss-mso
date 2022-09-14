@@ -582,5 +582,23 @@ module.exports = plugin.withOptions(
           respectImportant,
         }
       )
+
+      // mso-shading
+      matchUtilities(
+        {
+          'mso-shading': value => ({
+            'mso-shading': value
+          }),
+        },
+        {
+          values: {
+            auto: 'auto',
+            windowtext: 'windowtext',
+            transparent: 'transparent',
+            ...flattenColorPalette(theme('colors')),
+          },
+          respectImportant,
+        }
+      )
     }
   })
