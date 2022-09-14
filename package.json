@@ -4,16 +4,47 @@
   "description": "Tailwind CSS plugin that generates MSO utilities.",
   "main": "src/index.js",
   "scripts": {
-    "test": "c8 ava",
     "pretest": "xo",
-    "lint": "xo"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/maizzle/tailwindcss-mso.git"
+    "test": "c8 jest",
+    "lint": "xo",
+    "release": "np"
   },
   "author": "Cosmin Popovici (@cossssmin)",
   "license": "MIT",
+  "repository": "https://github.com/maizzle/tailwindcss-mso.git",
+  "bugs": {
+    "url": "https://github.com/maizzle/tailwindcss-mso/issues"
+  },
+  "homepage": "https://github.com/maizzle/tailwindcss-mso#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "c8": "^7.12.0",
+    "jest": "^28.1.3",
+    "np": "^7.6.2",
+    "postcss": "^8.4.16",
+    "prettier": "^2.7.1",
+    "tailwindcss": "^3.1.8",
+    "xo": "^0.47.0"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">=3.0.0"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest/customMatchers.js"
+    ]
+  },
+  "c8": {
+    "exclude": ["jest/customMatchers.js", "**/*.test.js"]
+  },
   "keywords": [
     "tailwindcss",
     "html-emails",
@@ -22,24 +53,5 @@
     "maizzle",
     "postcss-plugin",
     "mso"
-  ],
-  "bugs": {
-    "url": "https://github.com/maizzle/tailwindcss-mso/issues"
-  },
-  "homepage": "https://github.com/maizzle/tailwindcss-mso#readme",
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "lodash.forown": "^4.4.0",
-    "lodash.isobject": "^3.0.2"
-  },
-  "devDependencies": {
-    "ava": "^4.0.1",
-    "c8": "^7.11.0",
-    "np": "*",
-    "postcss": "^8.4.6",
-    "tailwindcss": "^3.0.18",
-    "xo": "^0.47.0"
-  }
+  ]
 }

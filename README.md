@@ -24,7 +24,7 @@ module.exports = {
   plugins: [
     require('tailwindcss-mso'),
   ],
-};
+}
 ```
 
 You can now use the classes in your HTML:
@@ -33,24 +33,92 @@ You can now use the classes in your HTML:
 <p class="mso-line-height-rule-exactly">...</p>
 ```
 
+## Options
+
+You may pass options to configure how the plugin generates utilities.
+
+#### respectImportant
+
+Type: `Boolean`\
+Default: `false`
+
+By default, the plugin does not respect the `important` option from your Tailwind config, as this may cause issues in Outlook when CSS is inlined.
+
+You may force it to generate `!important` utilities by setting this to `true`:
+
+```js
+module.exports = {
+  plugins: [
+    require('tailwindcss-mso')({
+      respectImportant: true,
+    }),
+  ],
+}
+```
+
+Result:
+
+```html
+<p class="mso-hide-all">...</p>
+```
+
+```css
+.mso-hide-all {
+  mso-hide: all !important;
+}
+```
+
+## Arbitrary values
+
+The plugin supports arbitrary values:
+
+```html
+<p class="mso-text-raise-[20px]">...</p>
+```
+
+```css
+.mso-text-raise-\[20px\] {
+  mso-text-raise: 20px;
+}
+```
+
+## Negative values
+
+Negative values are also supported, just as you'd expect:
+
+```html
+<p class="-mso-text-raise-4">...</p>
+```
+
+```css
+.-mso-text-raise-4 {
+  mso-hide: -16px;
+}
+```
+
 ## Generated utilities
 
-The plugin generates both default utilities and utilities based on your Tailwind config.
+The plugin generates both utilities that have default values, as well as utilities based on your Tailwind CSS configuration.
 
 ### Spacing utilities
 
-These utilities are all based on your `theme.spacing` scale:
+These utilities also work with values from your `theme.spacing` scale:
 
 - `mso-line-height-alt`
 - `mso-text-indent-alt`
-- `mso-table-lspace`
-- `mso-table-rspace`
-- `mso-padding-alt`
-- `mso-margin-alt`
+- `mso-padding-alt` (+ variations)
+- `mso-margin-alt` (+ variations)
+- `mso-para-margin` (+ variations)
 - `mso-text-raise`
 - `mso-font-width`
+- `mso-element-top`, `mso-element-left`
+- `mso-ansi-font-size`, `mso-bidi-font-size`
+- `mso-ansi-font-size`, `mso-bidi-font-size`
+- `mso-element-frame-width`, `mso-element-frame-height`
+- `mso-element-frame-vspace`, `mso-element-frame-hspace`
+- `mso-table-tspace`, `mso-table-rspace`, `mso-table-bspace`, `mso-table-lspace`
 
-All of these also include negative versions.
+Where it makes sense, these also support negative versions, like `-mso-text-raise-20`.
 
 ### Color utilities
 
@@ -59,89 +127,76 @@ These utilities are all based on your `theme.colors` config:
 - `mso-color-alt`
 - `mso-highlight`
 - `text-underline-color`
+- `mso-shading`
 
 ### Font utilities
 
-These utilities are all based on your `theme.fontSize` config:
+These font size utilities work with values from your `theme.spacing` config:
 
 - `mso-ansi-font-size`
 - `mso-bidi-font-size`
 
-Additionally, these default values are also included for each utility: large, larger, medium, small, smaller, x-large, x-small, xx-large, xx-small.
+Additionally, each utility also supports these values: `large`, `larger`, `medium`, `small`, `smaller`, `x-large`, `x-small`, `xx-large`, `xx-small`.
 
-### Default utilities
+### Other utilities
 
-The plugin also generates these utilities with default values:
+The plugin also generates the following utilities with default values:
 
-#### `mso-ansi-font-style`
+#### mso-{ansi|bidi}-font-style
 
-_italic, normal, oblique_
+Values: `italic`, `normal`, `oblique`
 
-#### `mso-ansi-font-weight`
+#### mso-{ansi|bidi}-font-weight
 
-_lighter, normal, bold, bolder_
+Values: `lighter`, `normal`, `bold`, `bolder`
 
-#### `mso-ascii-font-family`
+#### mso-{ascii|bidi|arabic}-font-family
 
-_auto, cursive, fantasy, monospace, sans-serif, serif_
+Values: `auto`, `cursive`, `fantasy`, `monospace`, `sans-serif`, `serif`
 
-#### `mso-bidi-flag`
+#### mso-bidi-flag
 
-_on, off_
+Values: `on`, `off`
 
-#### `mso-bidi-font-style`
+#### mso-highlight
 
-_italic, normal, oblique_
+Values: `auto`, `windowtext` (+ colors from your config)
 
-#### `mso-bidi-font-weight`
+#### mso-generic-font-family
 
-_lighter, normal, bold, bolder_
+Values: `auto`, `decorative`, `modern`, `roman`, `script`, `swiss`
 
-#### `mso-bidi-font-family`
+#### mso-element-frame-{width|height}
 
-_auto, cursive, fantasy, monospace, sans-serif, serif_
+Values: `auto` (+ values from your `spacing` scale)
 
-#### `mso-highlight`
+### mso-element
 
-_auto, windowtext_
+Values: `comment`, `comment-list`, `dropcap-dropped`, `dropcap-in-margin`, `endnote`, `endnote-continuation-notice`, `endnote-continuation-separator`, `endnote-list`, `endnote-separator`, `field-begin`, `field-end`, `field-separator`, `footer`, `footnote`, `footnote-continuation-notice`, `footnote-continuation-separator`, `footnote-list`, `footnote-separator`, `frame`, `header`, `none`, `paragraph-mark-properties`, `table-head`
 
-#### `mso-generic-font-family`
+#### mso-element-left
 
-_auto, decorative, modern, roman, script, swiss_
+Values: `center`, `inside`, `left`, `outside`, `right` (+ values from your `spacing` scale)
 
-#### `mso-element-frame-width`
+#### mso-element-top
 
-_auto_
+Values: `bottom`, `inside`, `middle`, `outside`, `top` (+ values from your `spacing` scale)
 
-### `mso-element`
+#### mso-hide
 
-_comment, comment-list, dropcap-dropped, dropcap-in-margin, endnote, endnote-continuation-notice, endnote-continuation-separator, endnote-list, endnote-separator, field-begin, field-end, field-separator, footer, footnote, footnote-continuation-notice, footnote-continuation-separator, footnote-list, footnote-separator, frame, header, none, paragraph-mark-properties, table-head_
+Values: `all`, `none`, `screen`
 
-#### `mso-element-left`
+#### mso-color-alt
 
-_center, inside, left, outside, right_
+Values: `auto`, `windowtext` (+ colors from your config)
 
-#### `mso-hide`
+#### mso-line-height-rule
 
-_all, none, screen_
+Values: `at-least`, `exactly`
 
-#### `mso-color-alt`
+#### mso-line-height-alt
 
-_auto, windowtext_
-
-#### `mso-line-height-rule`
-
-_at-least, exactly_
-
-#### `mso-line-height-alt`
-
-_normal_
-
-To see all the classes generated by this plugin, check out the [test file](https://github.com/maizzle/tailwindcss-mso/blob/master/test/expected/all.css).
-
-## !important
-
-The plugin does not respect the `important` key in your config, as this may cause issues in Outlook when CSS is inlined.
+Values: `normal`  (+ values from your `spacing` scale)
 
 [npm]: https://www.npmjs.com/package/tailwindcss-mso
 [npm-stats]: https://npm-stat.com/charts.html?package=tailwindcss-mso&from=2020-08-23
