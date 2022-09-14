@@ -92,7 +92,7 @@ Negative values are also supported, just as you'd expect:
 
 ```css
 .-mso-text-raise-4 {
-  mso-hide: -16px;
+  mso-text-raise: -16px;
 }
 ```
 
