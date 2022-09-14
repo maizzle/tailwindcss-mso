@@ -3,7 +3,7 @@ const flattenColorPalette = require('tailwindcss/lib/util/flattenColorPalette').
 
 module.exports = plugin.withOptions(
   function (options = {}) {
-    const respectImportant = options.respectImportant ?? false
+    const respectImportant = Boolean(options.respectImportant)
 
     return function ({ matchUtilities, theme }) {
       /*
