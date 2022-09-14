@@ -600,5 +600,22 @@ module.exports = plugin.withOptions(
           respectImportant,
         }
       )
+
+      // mso-element-frame-vspace, mso-element-frame-hspace
+      matchUtilities(
+        {
+          'mso-element-frame-vspace': value => ({
+            'mso-element-frame-vspace': value
+          }),
+          'mso-element-frame-hspace': value => ({
+            'mso-element-frame-hspace': value
+          }),
+        },
+        {
+          values: theme('spacing'),
+          supportsNegativeValues: true,
+          respectImportant,
+        }
+      )
     }
   })

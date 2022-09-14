@@ -276,7 +276,7 @@ it('mso-font-alt', () => {
   })
 })
 
-it('mso-element-frame-width', () => {
+it('mso-element-frame-{width|height}', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -849,6 +849,36 @@ it('mso-shading', () => {
       }
       .mso-shading-\[\#ffcc00\] {
         mso-shading: #ffcc00;
+      }
+    `)
+  })
+})
+
+it('mso-element-frame-{v|h}space', () => {
+  const config = {
+    content: [{
+      raw: String.raw`
+        <div class="mso-element-frame-vspace-20"></div>
+        <div class="mso-element-frame-vspace-[16px]"></div>
+        <div class="mso-element-frame-hspace-20"></div>
+        <div class="mso-element-frame-hspace-[16px]"></div>
+      `
+    }],
+  }
+
+  return run(config).then(result => {
+    expect(result.css).toMatchCss(String.raw`
+      .mso-element-frame-vspace-20 {
+        mso-element-frame-vspace: 5rem;
+      }
+      .mso-element-frame-vspace-\[16px\] {
+        mso-element-frame-vspace: 16px;
+      }
+      .mso-element-frame-hspace-20 {
+        mso-element-frame-hspace: 5rem;
+      }
+      .mso-element-frame-hspace-\[16px\] {
+        mso-element-frame-hspace: 16px;
       }
     `)
   })
