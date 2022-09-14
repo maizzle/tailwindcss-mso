@@ -2,13 +2,13 @@
 const path = require('path')
 const postcss = require('postcss')
 const tailwindcss = require('tailwindcss')
-const examplePlugin = require('./index.js')
+const tailwindcssMso = require('./index.js')
 
 function run(config, css = '@tailwind utilities', plugin = tailwindcss) {
   const {currentTestName} = expect.getState()
 
   config = {
-    plugins: [examplePlugin],
+    plugins: [tailwindcssMso],
     corePlugins: {
       preflight: false,
     },
@@ -20,6 +20,31 @@ function run(config, css = '@tailwind utilities', plugin = tailwindcss) {
     from: `${path.resolve(__filename)}?test=${currentTestName}`,
   })
 }
+
+// Plugin options
+
+it('plugin options', () => {
+  const config = {
+    plugins: [
+      tailwindcssMso({
+        respectImportant: true
+      })
+    ],
+    content: [{
+      raw: String.raw`
+        <div class="mso-hide-all"></div>
+      `
+    }],
+  }
+
+  return run(config).then(result => {
+    expect(result.css).toMatchCss(String.raw`
+      .mso-hide-all {
+        mso-hide: all !important;
+      }
+    `)
+  })
+})
 
 // Utilities with predefined values
 
