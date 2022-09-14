@@ -507,6 +507,32 @@ module.exports = plugin.withOptions(
         }
       )
 
+      // mso-para-margin
+      matchUtilities(
+        {
+          'mso-para-margin': value => ({
+            'mso-para-margin': value
+          }),
+          'mso-para-margin-top': value => ({
+            'mso-para-margin-top': value
+          }),
+          'mso-para-margin-right': value => ({
+            'mso-para-margin-right': value
+          }),
+          'mso-para-margin-bottom': value => ({
+            'mso-para-margin-bottom': value
+          }),
+          'mso-para-margin-left': value => ({
+            'mso-para-margin-left': value
+          }),
+        },
+        {
+          values: theme('spacing'),
+          supportsNegativeValues: true,
+          respectImportant,
+        }
+      )
+
       // mso-text-indent-alt
       matchUtilities(
         {

@@ -696,6 +696,48 @@ it('mso-margin-alt', () => {
   })
 })
 
+it('mso-para-margin', () => {
+  const config = {
+    content: [{
+      raw: String.raw`
+        <div class="mso-para-margin-[4px]"></div>
+        <div class="mso-para-margin-4"></div>
+        <div class="-mso-para-margin-4"></div>
+        <div class="mso-para-margin-top-4"></div>
+        <div class="mso-para-margin-right-4"></div>
+        <div class="mso-para-margin-bottom-4"></div>
+        <div class="mso-para-margin-left-4"></div>
+      `
+    }],
+  }
+
+  return run(config).then(result => {
+    expect(result.css).toMatchCss(String.raw`
+      .mso-para-margin-\[4px\] {
+        mso-para-margin: 4px;
+      }
+      .mso-para-margin-4 {
+        mso-para-margin: 1rem;
+      }
+      .-mso-para-margin-4 {
+        mso-para-margin: -1rem;
+      }
+      .mso-para-margin-top-4 {
+        mso-para-margin-top: 1rem;
+      }
+      .mso-para-margin-right-4 {
+        mso-para-margin-right: 1rem;
+      }
+      .mso-para-margin-bottom-4 {
+        mso-para-margin-bottom: 1rem;
+      }
+      .mso-para-margin-left-4 {
+        mso-para-margin-left: 1rem;
+      }
+    `)
+  })
+})
+
 it('mso-text-indent-alt', () => {
   const config = {
     content: [{
