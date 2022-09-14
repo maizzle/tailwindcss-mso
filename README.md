@@ -170,7 +170,7 @@ Values: `auto`, `decorative`, `modern`, `roman`, `script`, `swiss`
 
 Values: `auto` (+ values from your `spacing` scale)
 
-### mso-element
+#### mso-element
 
 Values: `comment`, `comment-list`, `dropcap-dropped`, `dropcap-in-margin`, `endnote`, `endnote-continuation-notice`, `endnote-continuation-separator`, `endnote-list`, `endnote-separator`, `field-begin`, `field-end`, `field-separator`, `footer`, `footnote`, `footnote-continuation-notice`, `footnote-continuation-separator`, `footnote-list`, `footnote-separator`, `frame`, `header`, `none`, `paragraph-mark-properties`, `table-head`
 
