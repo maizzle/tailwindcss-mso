@@ -1,147 +1,560 @@
 const plugin = require('tailwindcss/plugin')
-const isObject = require('lodash.isobject')
-const forOwn = require('lodash.forown')
-const data = require('../data.js')
+const flattenColorPalette = require('tailwindcss/lib/util/flattenColorPalette').default
 
-const negate = require('./util/negateValue.js')
+module.exports = plugin.withOptions(
+  function (options = {}) {
+    const respectImportant = options.respectImportant ?? false
 
-const mso = plugin(
-  ({addUtilities, e, theme}) => {
-    const newUtilities = {}
+    return function ({ matchUtilities, theme }) {
+      /*
+      |-------------------------------------------------------------------------------
+      | Utilities with predefined values
+      |-------------------------------------------------------------------------------
+      |
+      | These utilities use predefined values, and some also support values from
+      | your config, like spacing or colors.
+      |
+      */
 
-    const createUtilities = (name, rule, key, value, negative = false) => {
-      let utility = `.${e(`${name}-${key}`)}`
-      newUtilities[utility] = {}
-      newUtilities[utility][rule] = value
-
-      if (negative && !value.startsWith('0') && !value.startsWith('-')) {
-        utility = `.-${e(`${name}-${key}`)}`
-        newUtilities[utility] = {}
-        newUtilities[utility][rule] = negate(value)
-      }
-    }
-
-    // Utilities with predefined values
-    forOwn(data, (value, key) => {
-      forOwn(value, (v, k) => { // eslint-disable-line no-unused-vars
-        newUtilities[`.${key}-${v}`] = {
-          [key]: v,
+      // mso-ansi-font-size, mso-bidi-font-size
+      matchUtilities(
+        {
+          'mso-ansi-font-size': value => ({
+            'mso-ansi-font-size': value
+          }),
+          'mso-bidi-font-size': value => ({
+            'mso-bidi-font-size': value
+          }),
+        },
+        {
+          values: {
+            large: 'large',
+            larger: 'larger',
+            medium: 'medium',
+            small: 'small',
+            smaller: 'smaller',
+            'x-large': 'x-large',
+            'x-small': 'x-small',
+            'xx-large': 'xx-large',
+            'xx-small': 'xx-small',
+            ...theme('spacing'),
+          },
+          respectImportant,
         }
-      })
-    })
+      )
 
-    // Spacing utilities
-    forOwn(theme('spacing'), (value, key) => {
-      createUtilities('mso-text-raise', 'mso-text-raise', key, value, true)
+      // mso-ansi-font-style, mso-ansi-font-style
+      matchUtilities(
+        {
+          'mso-ansi-font-style': value => ({
+            'mso-ansi-font-style': value
+          }),
+          'mso-bidi-font-style': value => ({
+            'mso-bidi-font-style': value
+          }),
+        },
+        {
+          values: {
+            italic: 'italic',
+            normal: 'normal',
+            oblique: 'oblique',
+          },
+          respectImportant,
+        }
+      )
 
-      // mso-padding-alt
-      newUtilities[`.${e(`mso-padding-alt-${key}`)}`] = {
-        'mso-padding-alt': value,
-      }
-      newUtilities[`.${e(`mso-padding-top-alt-${key}`)}`] = {
-        'mso-padding-top-alt': value,
-      }
-      newUtilities[`.${e(`mso-padding-right-alt-${key}`)}`] = {
-        'mso-padding-right-alt': value,
-      }
-      newUtilities[`.${e(`mso-padding-bottom-alt-${key}`)}`] = {
-        'mso-padding-bottom-alt': value,
-      }
-      newUtilities[`.${e(`mso-padding-left-alt-${key}`)}`] = {
-        'mso-padding-left-alt': value,
-      }
+      // mso-ansi-font-weight, mso-bidi-font-weight
+      matchUtilities(
+        {
+          'mso-ansi-font-weight': value => ({
+            'mso-ansi-font-weight': value
+          }),
+          'mso-bidi-font-weight': value => ({
+            'mso-bidi-font-weight': value
+          }),
+        },
+        {
+          values: {
+            lighter: 'lighter',
+            normal: 'normal',
+            bold: 'bold',
+            bolder: 'bolder',
+          },
+          respectImportant,
+        }
+      )
 
-      // mso-margin-alt
-      createUtilities('mso-margin-alt', 'mso-margin-alt', key, value, true)
+      // mso-ascii-font-family, mso-bidi-font-family
+      matchUtilities(
+        {
+          'mso-ascii-font-family': value => ({
+            'mso-ascii-font-family': value
+          }),
+          'mso-bidi-font-family': value => ({
+            'mso-bidi-font-family': value
+          }),
+          'mso-arabic-font-family': value => ({
+            'mso-arabic-font-family': value
+          }),
+        },
+        {
+          values: {
+            auto: 'auto',
+            cursive: 'cursive',
+            fantasy: 'fantasy',
+            monospace: 'monospace',
+            'sans-serif': 'sans-serif',
+            serif: 'serif',
+          },
+          respectImportant,
+        }
+      )
 
-      // mso-margin-top-alt
-      createUtilities('mso-margin-top-alt', 'mso-margin-top-alt', key, value, true)
+      // mso-bidi-flag
+      matchUtilities(
+        {
+          'mso-bidi-flag': value => ({
+            'mso-bidi-flag': value
+          }),
+        },
+        {
+          values: {
+            on: 'on',
+            off: 'off',
+          },
+          respectImportant,
+        }
+      )
 
-      // mso-margin-right-alt
-      createUtilities('mso-margin-right-alt', 'mso-margin-right-alt', key, value, true)
+      // mso-highlight
+      matchUtilities(
+        {
+          'mso-highlight': value => ({
+            'mso-highlight': value
+          }),
+        },
+        {
+          values: {
+            auto: 'auto',
+            windowtext: 'windowtext',
+            ...flattenColorPalette(theme('colors')),
+          },
+          respectImportant,
+        }
+      )
 
-      // mso-margin-bottom-alt
-      createUtilities('mso-margin-bottom-alt', 'mso-margin-bottom-alt', key, value, true)
+      // mso-generic-font-family
+      matchUtilities(
+        {
+          'mso-generic-font-family': value => ({
+            'mso-generic-font-family': value
+          }),
+        },
+        {
+          values: {
+            auto: 'auto',
+            decorative: 'decorative',
+            modern: 'modern',
+            roman: 'roman',
+            script: 'script',
+            swiss: 'swiss',
+          },
+          respectImportant,
+        }
+      )
 
-      // mso-margin-left-alt
-      createUtilities('mso-margin-left-alt', 'mso-margin-left-alt', key, value, true)
+      // mso-font-alt
+      matchUtilities(
+        {
+          'mso-font-alt': value => ({
+            'mso-font-alt': value.toString()
+          }),
+        },
+        {
+          values: {
+            ...theme('fontFamily')
+          },
+          respectImportant,
+        }
+      )
+
+      // mso-element-frame-width, mso-element-frame-height
+      matchUtilities(
+        {
+          'mso-element-frame-width': value => ({
+            'mso-element-frame-width': value
+          }),
+          'mso-element-frame-height': value => ({
+            'mso-element-frame-height': value
+          }),
+        },
+        {
+          values: {
+            auto: 'auto',
+            ...theme('spacing'),
+          },
+          respectImportant,
+        }
+      )
+
+      // mso-element
+      matchUtilities(
+        {
+          'mso-element': value => ({
+            'mso-element': value
+          }),
+        },
+        {
+          values: {
+            comment: 'comment',
+            'comment-list': 'comment-list',
+            'dropcap-dropped': 'dropcap-dropped',
+            'dropcap-in-margin': 'dropcap-in-margin',
+            endnote: 'endnote',
+            'endnote-continuation-notice': 'endnote-continuation-notice',
+            'endnote-continuation-separator': 'endnote-continuation-separator',
+            'endnote-list': 'endnote-list',
+            'endnote-separator': 'endnote-separator',
+            'field-begin': 'field-begin',
+            'field-end': 'field-end',
+            'field-separator': 'field-separator',
+            footer: 'footer',
+            footnote: 'footnote',
+            'footnote-continuation-notice': 'footnote-continuation-notice',
+            'footnote-continuation-separator': 'footnote-continuation-separator',
+            'footnote-list': 'footnote-list',
+            'footnote-separator': 'footnote-separator',
+            frame: 'frame',
+            header: 'header',
+            none: 'none',
+            'paragraph-mark-properties': 'paragraph-mark-properties',
+            'table-head': 'table-head',
+          },
+          respectImportant,
+        }
+      )
+
+      // mso-element-wrap
+      matchUtilities(
+        {
+          'mso-element-wrap': value => ({
+            'mso-element-wrap': value
+          }),
+        },
+        {
+          values: {
+            around: 'around',
+            auto: 'auto',
+            none: 'none',
+            'no-wrap-beside': 'no-wrap-beside',
+          },
+          respectImportant,
+        }
+      )
+
+      // mso-element-left
+      matchUtilities(
+        {
+          'mso-element-left': value => ({
+            'mso-element-left': value
+          }),
+        },
+        {
+          values: {
+            center: 'center',
+            inside: 'inside',
+            left: 'left',
+            outside: 'outside',
+            right: 'right',
+            ...theme('spacing'),
+          },
+          supportsNegativeValues: true,
+          respectImportant,
+        }
+      )
+
+      // mso-element-top
+      matchUtilities(
+        {
+          'mso-element-top': value => ({
+            'mso-element-top': value
+          }),
+        },
+        {
+          values: {
+            bottom: 'bottom',
+            inside: 'inside',
+            middle: 'middle',
+            outside: 'outside',
+            top: 'top',
+            ...theme('spacing'),
+          },
+          supportsNegativeValues: true,
+          respectImportant,
+        }
+      )
+
+      // mso-hide
+      matchUtilities(
+        {
+          'mso-hide': value => ({
+            'mso-hide': value
+          }),
+        },
+        {
+          values: {
+            all: 'all',
+            none: 'none',
+            screen: 'screen',
+          },
+          respectImportant,
+        }
+      )
+
+      // mso-color-alt
+      matchUtilities(
+        {
+          'mso-color-alt': value => ({
+            'mso-color-alt': value
+          }),
+        },
+        {
+          values: {
+            auto: 'auto',
+            windowtext: 'windowtext',
+            ...flattenColorPalette(theme('colors')),
+          },
+          respectImportant,
+        }
+      )
+
+      // mso-line-height-rule
+      matchUtilities(
+        {
+          'mso-line-height-rule': value => ({
+            'mso-line-height-rule': value
+          }),
+        },
+        {
+          values: {
+            'at-least': 'at-least',
+            exactly: 'exactly',
+          },
+          respectImportant,
+        }
+      )
 
       // mso-line-height-alt
-      createUtilities('mso-line-height-alt', 'mso-line-height-alt', key, value, true)
+      matchUtilities(
+        {
+          'mso-line-height-alt': value => ({
+            'mso-line-height-alt': value
+          }),
+        },
+        {
+          values: {
+            normal: 'normal',
+            ...theme('spacing'),
+          },
+          supportsNegativeValues: true,
+          respectImportant,
+        }
+      )
+
+      // text-underline, text-underline-style
+      matchUtilities(
+        {
+          'text-underline': value => ({
+            'text-underline': value
+          }),
+          'text-underline-style': value => ({
+            'text-underline-style': value
+          }),
+        },
+        {
+          values: {
+            auto: 'auto',
+            dash: 'dash',
+            'dash-dot-dot-heavy': 'dash-dot-dot-heavy',
+            'dash-dot-heavy': 'dash-dot-heavy',
+            'dashed-heavy': 'dashed-heavy',
+            'dash-long': 'dash-long',
+            'dash-long-heavy': 'dash-long-heavy',
+            'dot-dash': 'dot-dash',
+            'dot-dot-dash': 'dot-dot-dash',
+            dotted: 'dotted',
+            'dotted-heavy': 'dotted-heavy',
+            double: 'double',
+            'double-accounting': 'double-accounting',
+            none: 'none',
+            single: 'single',
+            'single-accounting': 'single-accounting',
+            thick: 'thick',
+            wave: 'wave',
+            'wavy-double': 'wavy-double',
+            'wavy-heavy': 'wavy-heavy',
+            windowtext: 'windowtext',
+            word: 'word',
+          },
+          respectImportant,
+        }
+      )
+
+      // text-underline-color
+      matchUtilities(
+        {
+          'text-underline-color': value => ({
+            'text-underline-color': value
+          }),
+        },
+        {
+          values: {
+            auto: 'auto',
+            windowtext: 'windowtext',
+            ...flattenColorPalette(theme('colors')),
+          },
+          respectImportant,
+        }
+      )
+
+      // mso-special-format
+      matchUtilities(
+        {
+          'mso-special-format': value => ({
+            'mso-special-format': value
+          }),
+        },
+        {
+          values: {
+            bullet: 'bullet',
+          },
+          respectImportant,
+        }
+      )
+
+      /*
+      |-------------------------------------------------------------------------------
+      | Spacing utilities
+      |-------------------------------------------------------------------------------
+      |
+      | These utilities are based on the spacing scale from your config. Some also
+      | support negative values.
+      |
+      */
+
+      // mso-text-raise
+      matchUtilities(
+        {
+          'mso-text-raise': value => ({
+            'mso-text-raise': value
+          }),
+        },
+        {
+          values: theme('spacing'),
+          supportsNegativeValues: true,
+          respectImportant,
+        }
+      )
+
+      // mso-padding-alt
+      matchUtilities(
+        {
+          'mso-padding-alt': value => ({
+            'mso-padding-alt': value
+          }),
+          'mso-padding-top-alt': value => ({
+            'mso-padding-top-alt': value
+          }),
+          'mso-padding-right-alt': value => ({
+            'mso-padding-right-alt': value
+          }),
+          'mso-padding-bottom-alt': value => ({
+            'mso-padding-bottom-alt': value
+          }),
+          'mso-padding-left-alt': value => ({
+            'mso-padding-left-alt': value
+          }),
+        },
+        {
+          values: theme('spacing'),
+          respectImportant,
+        }
+      )
+
+      // mso-margin-alt
+      matchUtilities(
+        {
+          'mso-margin-alt': value => ({
+            'mso-margin-alt': value
+          }),
+          'mso-margin-top-alt': value => ({
+            'mso-margin-top-alt': value
+          }),
+          'mso-margin-right-alt': value => ({
+            'mso-margin-right-alt': value
+          }),
+          'mso-margin-bottom-alt': value => ({
+            'mso-margin-bottom-alt': value
+          }),
+          'mso-margin-left-alt': value => ({
+            'mso-margin-left-alt': value
+          }),
+        },
+        {
+          values: theme('spacing'),
+          supportsNegativeValues: true,
+          respectImportant,
+        }
+      )
 
       // mso-text-indent-alt
-      createUtilities('mso-text-indent-alt', 'mso-text-indent-alt', key, value, true)
+      matchUtilities(
+        {
+          'mso-text-indent-alt': value => ({
+            'mso-text-indent-alt': value
+          }),
+        },
+        {
+          values: theme('spacing'),
+          supportsNegativeValues: true,
+          respectImportant,
+        }
+      )
 
-      // mso-table-tspace
-      createUtilities('mso-table-tspace', 'mso-table-tspace', key, value, true)
-
-      // mso-table-rspace
-      createUtilities('mso-table-rspace', 'mso-table-rspace', key, value, true)
-
-      // mso-table-bspace
-      createUtilities('mso-table-bspace', 'mso-table-bspace', key, value, true)
-
-      // mso-table-lspace
-      createUtilities('mso-table-lspace', 'mso-table-lspace', key, value, true)
+      // mso-table-{?}space
+      matchUtilities(
+        {
+          'mso-table-tspace': value => ({
+            'mso-table-tspace': value
+          }),
+          'mso-table-rspace': value => ({
+            'mso-table-rspace': value
+          }),
+          'mso-table-bspace': value => ({
+            'mso-table-bspace': value
+          }),
+          'mso-table-lspace': value => ({
+            'mso-table-lspace': value
+          }),
+        },
+        {
+          values: theme('spacing'),
+          supportsNegativeValues: true,
+          respectImportant,
+        }
+      )
 
       // mso-font-width
-      createUtilities('mso-font-width', 'mso-font-width', key, value, true)
-    })
-
-    // Font utilities
-    forOwn(theme('fontSize'), (value, key) => {
-      // ANSI font size
-      newUtilities[`.${e(`mso-ansi-font-size-${key}`)}`] = {
-        'mso-ansi-font-size': Array.isArray(value) ? value[0] : value,
-      }
-
-      // BIDI font size
-      newUtilities[`.${e(`mso-bidi-font-size-${key}`)}`] = {
-        'mso-bidi-font-size': Array.isArray(value) ? value[0] : value,
-      }
-    })
-
-    // Color utilities
-    forOwn(theme('colors'), (colors, name) => {
-      if (isObject(colors)) {
-        forOwn(colors, (value, shade) => {
-          // mso-color-alt
-          newUtilities[`.${e(`mso-color-alt-${name}-${shade}`)}`] = {
-            'mso-color-alt': value,
-          }
-
-          // mso-highlight
-          newUtilities[`.${e(`mso-highlight-${name}-${shade}`)}`] = {
-            'mso-highlight': value,
-          }
-
-          // text-underline-color
-          newUtilities[`.${e(`text-underline-${name}-${shade}`)}`] = {
-            'text-underline-color': value,
-          }
-        })
-      } else {
-        // mso-color-alt
-        newUtilities[`.${e(`mso-color-alt-${name}`)}`] = {
-          'mso-color-alt': colors,
+      matchUtilities(
+        {
+          'mso-font-width': value => ({
+            'mso-font-width': value
+          }),
+        },
+        {
+          values: theme('width'),
+          respectImportant,
         }
-
-        // mso-highlight
-        newUtilities[`.${e(`mso-highlight-${name}`)}`] = {
-          'mso-highlight': colors,
-        }
-
-        // text-underline-color
-        newUtilities[`.${e(`text-underline-${name}`)}`] = {
-          'text-underline-color': colors,
-        }
-      }
-    })
-
-    addUtilities(newUtilities, {
-      respectImportant: false,
-    })
-  },
-)
-
-module.exports = mso
+      )
+    }
+  })
