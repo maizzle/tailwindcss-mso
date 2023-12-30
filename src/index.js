@@ -1,7 +1,7 @@
-const plugin = require('tailwindcss/plugin')
-const flattenColorPalette = require('tailwindcss/lib/util/flattenColorPalette').default
+import plugin from 'tailwindcss/plugin'
+import flattenColorPalette from 'tailwindcss/lib/util/flattenColorPalette'
 
-module.exports = plugin.withOptions(
+const tailwindCssMsoPlugin = plugin.withOptions(
   function (options = {}) {
     const respectImportant = Boolean(options.respectImportant)
 
@@ -618,4 +618,7 @@ module.exports = plugin.withOptions(
         }
       )
     }
-  })
+  }
+)
+
+export default tailwindCssMsoPlugin

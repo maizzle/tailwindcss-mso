@@ -1,9 +1,30 @@
-/* eslint-env jest */
-const path = require('path')
-const postcss = require('postcss')
-const tailwindcss = require('tailwindcss')
-const tailwindcssMso = require('./index.js')
+import path from 'node:path'
+import postcss from 'postcss'
+import { expect, test } from 'vitest'
+import tailwindcss from 'tailwindcss'
+import tailwindcssMso from './index.js'
 
+// Custom CSS matcher
+expect.extend({
+  // Compare two CSS strings with all whitespace removed
+  // This is probably naive but it's fast and works well enough.
+  toMatchCss(received, argument) {
+    function stripped(string_) {
+      return string_.replaceAll(/\s/g, '').replaceAll(';', '')
+    }
+
+    const pass = stripped(received) === stripped(argument)
+
+    return {
+      pass,
+      actual: received,
+      expected: argument,
+      message: () => pass ? 'All good!' : 'CSS does not match',
+    }
+  }
+})
+
+// Function to run the plugin
 function run(config, css = '@tailwind utilities', plugin = tailwindcss) {
   const {currentTestName} = expect.getState()
 
@@ -12,7 +33,6 @@ function run(config, css = '@tailwind utilities', plugin = tailwindcss) {
     corePlugins: {
       preflight: false,
     },
-    important: true,
     ...config,
   }
 
@@ -21,15 +41,14 @@ function run(config, css = '@tailwind utilities', plugin = tailwindcss) {
   })
 }
 
-// Plugin options
-
-it('plugin options', () => {
+test('plugin options', () => {
   const config = {
     plugins: [
       tailwindcssMso({
         respectImportant: true
       })
     ],
+    important: true,
     content: [{
       raw: String.raw`
         <div class="mso-hide-all"></div>
@@ -40,15 +59,13 @@ it('plugin options', () => {
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
       .mso-hide-all {
-        mso-hide: all !important;
+        mso-hide: all !important
       }
     `)
   })
 })
 
-// Utilities with predefined values
-
-it('mso-{ansi|bidi}-font-size', () => {
+test('mso-{ansi|bidi}-font-size', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -64,29 +81,29 @@ it('mso-{ansi|bidi}-font-size', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-ansi-font-size-small {
-        mso-ansi-font-size: small;
-      }
       .mso-ansi-font-size-20 {
-        mso-ansi-font-size: 5rem;
+          mso-ansi-font-size: 5rem
       }
       .mso-ansi-font-size-\[14px\] {
-        mso-ansi-font-size: 14px;
+          mso-ansi-font-size: 14px
       }
-      .mso-bidi-font-size-small {
-        mso-bidi-font-size: small;
+      .mso-ansi-font-size-small {
+          mso-ansi-font-size: small
       }
       .mso-bidi-font-size-20 {
-        mso-bidi-font-size: 5rem;
+          mso-bidi-font-size: 5rem
       }
       .mso-bidi-font-size-\[14px\] {
-        mso-bidi-font-size: 14px;
+          mso-bidi-font-size: 14px
+      }
+      .mso-bidi-font-size-small {
+          mso-bidi-font-size: small
       }
     `)
   })
 })
 
-it('mso-{ansi|bidi}-font-style', () => {
+test('mso-{ansi|bidi}-font-style', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -100,23 +117,23 @@ it('mso-{ansi|bidi}-font-style', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-ansi-font-style-oblique {
-        mso-ansi-font-style: oblique;
-      }
       .mso-ansi-font-style-\[normal\] {
-        mso-ansi-font-style: normal;
+        mso-ansi-font-style: normal
       }
-      .mso-bidi-font-style-oblique {
-        mso-bidi-font-style: oblique;
+      .mso-ansi-font-style-oblique {
+        mso-ansi-font-style: oblique
       }
       .mso-bidi-font-style-\[normal\] {
-        mso-bidi-font-style: normal;
+        mso-bidi-font-style: normal
+      }
+      .mso-bidi-font-style-oblique {
+        mso-bidi-font-style: oblique
       }
     `)
   })
 })
 
-it('mso-{ansi|bidi}-font-weight', () => {
+test('mso-{ansi|bidi}-font-weight', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -130,23 +147,23 @@ it('mso-{ansi|bidi}-font-weight', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-ansi-font-weight-bold {
-        mso-ansi-font-weight: bold;
-      }
       .mso-ansi-font-weight-\[normal\] {
-        mso-ansi-font-weight: normal;
+        mso-ansi-font-weight: normal
       }
-      .mso-bidi-font-weight-bold {
-        mso-bidi-font-weight: bold;
+      .mso-ansi-font-weight-bold {
+        mso-ansi-font-weight: bold
       }
       .mso-bidi-font-weight-\[normal\] {
-        mso-bidi-font-weight: normal;
+        mso-bidi-font-weight: normal
+      }
+      .mso-bidi-font-weight-bold {
+        mso-bidi-font-weight: bold
       }
     `)
   })
 })
 
-it('mso-{ascii|bidi}-font-family', () => {
+test('mso-{ascii|bidi}-font-family', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -162,29 +179,29 @@ it('mso-{ascii|bidi}-font-family', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-ascii-font-family-serif {
-        mso-ascii-font-family: serif;
-      }
-      .mso-ascii-font-family-\[sans-serif\] {
-        mso-ascii-font-family: sans-serif;
-      }
-      .mso-bidi-font-family-serif {
-        mso-bidi-font-family: serif;
-      }
-      .mso-bidi-font-family-\[sans-serif\] {
-        mso-bidi-font-family: sans-serif;
+      .mso-arabic-font-family-\[sans-serif\] {
+        mso-arabic-font-family: sans-serif
       }
       .mso-arabic-font-family-serif {
-        mso-arabic-font-family: serif;
+        mso-arabic-font-family: serif
       }
-      .mso-arabic-font-family-\[sans-serif\] {
-        mso-arabic-font-family: sans-serif;
+      .mso-ascii-font-family-\[sans-serif\] {
+        mso-ascii-font-family: sans-serif
+      }
+      .mso-ascii-font-family-serif {
+        mso-ascii-font-family: serif
+      }
+      .mso-bidi-font-family-\[sans-serif\] {
+        mso-bidi-font-family: sans-serif
+      }
+      .mso-bidi-font-family-serif {
+        mso-bidi-font-family: serif
       }
     `)
   })
 })
 
-it('mso-bidi-flag', () => {
+test('mso-bidi-flag', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -196,17 +213,17 @@ it('mso-bidi-flag', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-bidi-flag-on {
-        mso-bidi-flag: on;
-      }
       .mso-bidi-flag-\[off\] {
-        mso-bidi-flag: off;
+        mso-bidi-flag: off
+      }
+      .mso-bidi-flag-on {
+        mso-bidi-flag: on
       }
     `)
   })
 })
 
-it('mso-highlight', () => {
+test('mso-highlight', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -219,20 +236,20 @@ it('mso-highlight', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
+      .mso-highlight-\[\#ffcc00\] {
+        mso-highlight: #ffcc00
+      }
       .mso-highlight-auto {
-        mso-highlight: auto;
+        mso-highlight: auto
       }
       .mso-highlight-blue-400 {
-        mso-highlight: #60a5fa;
-      }
-      .mso-highlight-\[\#ffcc00\] {
-        mso-highlight: #ffcc00;
+        mso-highlight: #60a5fa
       }
     `)
   })
 })
 
-it('mso-generic-font-family', () => {
+test('mso-generic-font-family', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -244,17 +261,17 @@ it('mso-generic-font-family', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-generic-font-family-swiss {
-        mso-generic-font-family: swiss;
-      }
       .mso-generic-font-family-\[script\] {
-        mso-generic-font-family: script;
+        mso-generic-font-family: script
+      }
+      .mso-generic-font-family-swiss {
+        mso-generic-font-family: swiss
       }
     `)
   })
 })
 
-it('mso-font-alt', () => {
+test('mso-font-alt', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -266,17 +283,17 @@ it('mso-font-alt', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-font-alt-mono {
-        mso-font-alt: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      }
       .mso-font-alt-\[Arial\2c sans-serif\] {
-        mso-font-alt: Arial,sans-serif;
+        mso-font-alt: Arial,sans-serif
+      }
+      .mso-font-alt-mono {
+        mso-font-alt: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
       }
     `)
   })
 })
 
-it('mso-element-frame-{width|height}', () => {
+test('mso-element-frame-{width|height}', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -292,29 +309,29 @@ it('mso-element-frame-{width|height}', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-element-frame-width-auto {
-        mso-element-frame-width: auto;
-      }
-      .mso-element-frame-width-20 {
-        mso-element-frame-width: 5rem;
-      }
-      .mso-element-frame-width-\[16px\] {
-        mso-element-frame-width: 16px;
-      }
-      .mso-element-frame-height-auto {
-        mso-element-frame-height: auto;
-      }
       .mso-element-frame-height-20 {
-        mso-element-frame-height: 5rem;
+        mso-element-frame-height: 5rem
       }
       .mso-element-frame-height-\[16px\] {
-        mso-element-frame-height: 16px;
+        mso-element-frame-height: 16px
+      }
+      .mso-element-frame-height-auto {
+        mso-element-frame-height: auto
+      }
+      .mso-element-frame-width-20 {
+        mso-element-frame-width: 5rem
+      }
+      .mso-element-frame-width-\[16px\] {
+        mso-element-frame-width: 16px
+      }
+      .mso-element-frame-width-auto {
+        mso-element-frame-width: auto
       }
     `)
   })
 })
 
-it('mso-element', () => {
+test('mso-element', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -326,17 +343,17 @@ it('mso-element', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-element-none {
-        mso-element: none;
-      }
       .mso-element-\[field-separator\] {
-        mso-element: field-separator;
+        mso-element: field-separator
+      }
+      .mso-element-none {
+        mso-element: none
       }
     `)
   })
 })
 
-it('mso-element-wrap', () => {
+test('mso-element-wrap', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -348,17 +365,17 @@ it('mso-element-wrap', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-element-wrap-none {
-        mso-element-wrap: none;
-      }
       .mso-element-wrap-\[no-wrap-beside\] {
-        mso-element-wrap: no-wrap-beside;
+        mso-element-wrap: no-wrap-beside
+      }
+      .mso-element-wrap-none {
+        mso-element-wrap: none
       }
     `)
   })
 })
 
-it('mso-element-left', () => {
+test('mso-element-left', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -372,23 +389,23 @@ it('mso-element-left', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-element-left-left {
-        mso-element-left: left;
+      .-mso-element-left-20 {
+        mso-element-left: -5rem
       }
       .mso-element-left-20 {
-        mso-element-left: 5rem;
-      }
-      .-mso-element-left-20 {
-        mso-element-left: -5rem;
+        mso-element-left: 5rem
       }
       .mso-element-left-\[16px\] {
-        mso-element-left: 16px;
+        mso-element-left: 16px
+      }
+      .mso-element-left-left {
+        mso-element-left: left
       }
     `)
   })
 })
 
-it('mso-element-top', () => {
+test('mso-element-top', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -402,23 +419,23 @@ it('mso-element-top', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-element-top-top {
-        mso-element-top: top;
+      .-mso-element-top-20 {
+        mso-element-top: -5rem
       }
       .mso-element-top-20 {
-        mso-element-top: 5rem;
-      }
-      .-mso-element-top-20 {
-        mso-element-top: -5rem;
+        mso-element-top: 5rem
       }
       .mso-element-top-\[16px\] {
-        mso-element-top: 16px;
+        mso-element-top: 16px
+      }
+      .mso-element-top-top {
+        mso-element-top: top
       }
     `)
   })
 })
 
-it('mso-hide', () => {
+test('mso-hide', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -430,17 +447,17 @@ it('mso-hide', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-hide-all {
-        mso-hide: all;
-      }
       .mso-hide-\[none\] {
-        mso-hide: none;
+        mso-hide: none
+      }
+      .mso-hide-all {
+        mso-hide: all
       }
     `)
   })
 })
 
-it('mso-color-alt', () => {
+test('mso-color-alt', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -453,20 +470,20 @@ it('mso-color-alt', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
+      .mso-color-alt-\[\#ffcc00\] {
+        mso-color-alt: #ffcc00
+      }
       .mso-color-alt-auto {
-        mso-color-alt: auto;
+        mso-color-alt: auto
       }
       .mso-color-alt-red-200 {
-        mso-color-alt: #fecaca;
-      }
-      .mso-color-alt-\[\#ffcc00\] {
-        mso-color-alt: #ffcc00;
+        mso-color-alt: #fecaca
       }
     `)
   })
 })
 
-it('mso-line-height-rule', () => {
+test('mso-line-height-rule', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -478,17 +495,17 @@ it('mso-line-height-rule', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-line-height-rule-exactly {
-        mso-line-height-rule: exactly;
-      }
       .mso-line-height-rule-\[at-least\] {
-        mso-line-height-rule: at-least;
+        mso-line-height-rule: at-least
+      }
+      .mso-line-height-rule-exactly {
+        mso-line-height-rule: exactly
       }
     `)
   })
 })
 
-it('mso-line-height-alt', () => {
+test('mso-line-height-alt', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -502,23 +519,23 @@ it('mso-line-height-alt', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-line-height-alt-normal {
-        mso-line-height-alt: normal;
+      .-mso-line-height-alt-20 {
+        mso-line-height-alt: -5rem
       }
       .mso-line-height-alt-20 {
-        mso-line-height-alt: 5rem;
-      }
-      .-mso-line-height-alt-20 {
-        mso-line-height-alt: -5rem;
+        mso-line-height-alt: 5rem
       }
       .mso-line-height-alt-\[10px\] {
-        mso-line-height-alt: 10px;
+        mso-line-height-alt: 10px
+      }
+      .mso-line-height-alt-normal {
+        mso-line-height-alt: normal
       }
     `)
   })
 })
 
-it('text-underline, text-underline-style', () => {
+test('text-underline, text-underline-style', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -532,23 +549,23 @@ it('text-underline, text-underline-style', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .text-underline-none {
-        text-underline: none;
-      }
       .text-underline-\[wavy-double\] {
-        text-underline: wavy-double;
+        text-underline: wavy-double
       }
-      .text-underline-style-none {
-        text-underline-style: none;
+      .text-underline-none {
+        text-underline: none
       }
       .text-underline-style-\[wavy-double\] {
-        text-underline-style: wavy-double;
+        text-underline-style: wavy-double
+      }
+      .text-underline-style-none {
+        text-underline-style: none
       }
     `)
   })
 })
 
-it('text-underline-color', () => {
+test('text-underline-color', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -561,20 +578,20 @@ it('text-underline-color', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
+      .text-underline-color-\[\#ffcc00\] {
+        text-underline-color: #ffcc00
+      }
       .text-underline-color-auto {
-        text-underline-color: auto;
+        text-underline-color: auto
       }
       .text-underline-color-blue-300 {
-        text-underline-color: #93c5fd;
-      }
-      .text-underline-color-\[\#ffcc00\] {
-        text-underline-color: #ffcc00;
+        text-underline-color: #93c5fd
       }
     `)
   })
 })
 
-it('mso-special-format', () => {
+test('mso-special-format', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -586,15 +603,13 @@ it('mso-special-format', () => {
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
       .mso-special-format-bullet {
-        mso-special-format: bullet;
+        mso-special-format: bullet
       }
     `)
   })
 })
 
-// Spacing utilities
-
-it('mso-text-raise', () => {
+test('mso-text-raise', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -606,17 +621,17 @@ it('mso-text-raise', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-text-raise-4 {
-        mso-text-raise: 1rem;
-      }
       .-mso-text-raise-4 {
-        mso-text-raise: -1rem;
+        mso-text-raise: -1rem
+      }
+      .mso-text-raise-4 {
+        mso-text-raise: 1rem
       }
     `)
   })
 })
 
-it('mso-padding-alt', () => {
+test('mso-padding-alt', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -632,29 +647,29 @@ it('mso-padding-alt', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-padding-alt-\[4px\] {
-        mso-padding-alt: 4px;
-      }
       .mso-padding-alt-4 {
-        mso-padding-alt: 1rem;
+        mso-padding-alt: 1rem
       }
-      .mso-padding-top-alt-4 {
-        mso-padding-top-alt: 1rem;
-      }
-      .mso-padding-right-alt-4 {
-        mso-padding-right-alt: 1rem;
+      .mso-padding-alt-\[4px\] {
+        mso-padding-alt: 4px
       }
       .mso-padding-bottom-alt-4 {
-        mso-padding-bottom-alt: 1rem;
+        mso-padding-bottom-alt: 1rem
       }
       .mso-padding-left-alt-4 {
-        mso-padding-left-alt: 1rem;
+        mso-padding-left-alt: 1rem
+      }
+      .mso-padding-right-alt-4 {
+        mso-padding-right-alt: 1rem
+      }
+      .mso-padding-top-alt-4 {
+        mso-padding-top-alt: 1rem
       }
     `)
   })
 })
 
-it('mso-margin-alt', () => {
+test('mso-margin-alt', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -671,32 +686,32 @@ it('mso-margin-alt', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-margin-alt-\[4px\] {
-        mso-margin-alt: 4px;
+      .-mso-margin-alt-4 {
+        mso-margin-alt: -1rem
       }
       .mso-margin-alt-4 {
-        mso-margin-alt: 1rem;
+        mso-margin-alt: 1rem
       }
-      .-mso-margin-alt-4 {
-        mso-margin-alt: -1rem;
-      }
-      .mso-margin-top-alt-4 {
-        mso-margin-top-alt: 1rem;
-      }
-      .mso-margin-right-alt-4 {
-        mso-margin-right-alt: 1rem;
+      .mso-margin-alt-\[4px\] {
+        mso-margin-alt: 4px
       }
       .mso-margin-bottom-alt-4 {
-        mso-margin-bottom-alt: 1rem;
+        mso-margin-bottom-alt: 1rem
       }
       .mso-margin-left-alt-4 {
-        mso-margin-left-alt: 1rem;
+        mso-margin-left-alt: 1rem
+      }
+      .mso-margin-right-alt-4 {
+        mso-margin-right-alt: 1rem
+      }
+      .mso-margin-top-alt-4 {
+        mso-margin-top-alt: 1rem
       }
     `)
   })
 })
 
-it('mso-para-margin', () => {
+test('mso-para-margin', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -713,32 +728,32 @@ it('mso-para-margin', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-para-margin-\[4px\] {
-        mso-para-margin: 4px;
+      .-mso-para-margin-4 {
+        mso-para-margin: -1rem
       }
       .mso-para-margin-4 {
-        mso-para-margin: 1rem;
+        mso-para-margin: 1rem
       }
-      .-mso-para-margin-4 {
-        mso-para-margin: -1rem;
-      }
-      .mso-para-margin-top-4 {
-        mso-para-margin-top: 1rem;
-      }
-      .mso-para-margin-right-4 {
-        mso-para-margin-right: 1rem;
+      .mso-para-margin-\[4px\] {
+        mso-para-margin: 4px
       }
       .mso-para-margin-bottom-4 {
-        mso-para-margin-bottom: 1rem;
+        mso-para-margin-bottom: 1rem
       }
       .mso-para-margin-left-4 {
-        mso-para-margin-left: 1rem;
+        mso-para-margin-left: 1rem
+      }
+      .mso-para-margin-right-4 {
+        mso-para-margin-right: 1rem
+      }
+      .mso-para-margin-top-4 {
+        mso-para-margin-top: 1rem
       }
     `)
   })
 })
 
-it('mso-text-indent-alt', () => {
+test('mso-text-indent-alt', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -751,20 +766,20 @@ it('mso-text-indent-alt', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
+      .-mso-text-indent-alt-4 {
+        mso-text-indent-alt: -1rem
+      }
       .mso-text-indent-alt-4 {
-        mso-text-indent-alt: 1rem;
+        mso-text-indent-alt: 1rem
       }
       .mso-text-indent-alt-\[4px\] {
-        mso-text-indent-alt: 4px;
-      }
-      .-mso-text-indent-alt-4 {
-        mso-text-indent-alt: -1rem;
+        mso-text-indent-alt: 4px
       }
     `)
   })
 })
 
-it('mso-table-{t|r|b|l}space', () => {
+test('mso-table-{t|r|b|l}space', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -780,29 +795,29 @@ it('mso-table-{t|r|b|l}space', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-table-tspace-\[4px\] {
-        mso-table-tspace: 4px;
-      }
-      .mso-table-tspace-20 {
-        mso-table-tspace: 5rem;
-      }
       .-mso-table-tspace-20 {
-        mso-table-tspace: -5rem;
-      }
-      .mso-table-rspace-20 {
-        mso-table-rspace: 5rem;
+        mso-table-tspace: -5rem
       }
       .mso-table-bspace-20 {
-        mso-table-bspace: 5rem;
+        mso-table-bspace: 5rem
       }
       .mso-table-lspace-20 {
-        mso-table-lspace: 5rem;
+        mso-table-lspace: 5rem
+      }
+      .mso-table-rspace-20 {
+        mso-table-rspace: 5rem
+      }
+      .mso-table-tspace-20 {
+        mso-table-tspace: 5rem
+      }
+      .mso-table-tspace-\[4px\] {
+        mso-table-tspace: 4px
       }
     `)
   })
 })
 
-it('mso-font-width', () => {
+test('mso-font-width', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -815,20 +830,20 @@ it('mso-font-width', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-font-width-full {
-        mso-font-width: 100%;
+      .mso-font-width-1\/2 {
+        mso-font-width: 50%
       }
       .mso-font-width-\[25\%\] {
-        mso-font-width: 25%;
+        mso-font-width: 25%
       }
-      .mso-font-width-1\/2 {
-        mso-font-width: 50%;
+      .mso-font-width-full {
+        mso-font-width: 100%
       }
     `)
   })
 })
 
-it('mso-shading', () => {
+test('mso-shading', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -841,20 +856,20 @@ it('mso-shading', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
+      .mso-shading-\[\#ffcc00\] {
+        mso-shading: #ffcc00
+      }
       .mso-shading-auto {
-        mso-shading: auto;
+        mso-shading: auto
       }
       .mso-shading-red-200 {
-        mso-shading: #fecaca;
-      }
-      .mso-shading-\[\#ffcc00\] {
-        mso-shading: #ffcc00;
+        mso-shading: #fecaca
       }
     `)
   })
 })
 
-it('mso-element-frame-{v|h}space', () => {
+test('mso-element-frame-{v|h}space', () => {
   const config = {
     content: [{
       raw: String.raw`
@@ -868,17 +883,17 @@ it('mso-element-frame-{v|h}space', () => {
 
   return run(config).then(result => {
     expect(result.css).toMatchCss(String.raw`
-      .mso-element-frame-vspace-20 {
-        mso-element-frame-vspace: 5rem;
-      }
-      .mso-element-frame-vspace-\[16px\] {
-        mso-element-frame-vspace: 16px;
-      }
       .mso-element-frame-hspace-20 {
-        mso-element-frame-hspace: 5rem;
+        mso-element-frame-hspace: 5rem
       }
       .mso-element-frame-hspace-\[16px\] {
-        mso-element-frame-hspace: 16px;
+        mso-element-frame-hspace: 16px
+      }
+      .mso-element-frame-vspace-20 {
+        mso-element-frame-vspace: 5rem
+      }
+      .mso-element-frame-vspace-\[16px\] {
+        mso-element-frame-vspace: 16px
       }
     `)
   })

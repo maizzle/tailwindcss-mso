@@ -1,7 +1,6 @@
-node_modules
-coverage
 .vscode
-Thumbs.db
+coverage
 .DS_Store
+node_modules
 npm-debug.log
 yarn-error.log
