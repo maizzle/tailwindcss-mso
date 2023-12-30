@@ -128,6 +128,39 @@ These utilities are all based on your `theme.colors` config:
 - `mso-highlight`
 - `text-underline-color`
 - `mso-shading`
+- `mso-shadow-color`
+
+### Border utilities
+
+Utilities for controlling the border styles of elements.
+
+For border colors:
+
+- `mso-border-alt`
+- `mso-border-between`
+- `mso-border-bottom-alt`
+- `mso-border-left-alt`
+- `mso-border-right-alt`
+- `mso-border-top-alt`
+
+For border widths:
+
+- `mso-border-between-width`
+- `mso-border-width-alt`
+- `mso-border-bottom-width-alt`
+- `mso-border-left-width-alt`
+- `mso-border-right-width-alt`
+- `mso-border-top-width-alt`
+
+Others:
+
+- `mso-border-bottom-source`
+- `mso-border-left-source`
+- `mso-border-right-source`
+- `mso-border-top-source`
+- `mso-border-shadow`
+- `mso-border-effect`
+
 
 ### Font utilities
 
@@ -185,10 +218,6 @@ Values: `bottom`, `inside`, `middle`, `outside`, `top` (+ values from your `spac
 #### mso-hide
 
 Values: `all`, `none`, `screen`
-
-#### mso-color-alt
-
-Values: `auto`, `windowtext` (+ colors from your config)
 
 #### mso-line-height-rule
 
