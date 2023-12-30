@@ -869,6 +869,32 @@ test('mso-shading', () => {
   })
 })
 
+test('mso-shadow-color', () => {
+  const config = {
+    content: [{
+      raw: String.raw`
+        <div class="mso-shadow-color-auto"></div>
+        <div class="mso-shadow-color-red-200"></div>
+        <div class="mso-shadow-color-[#ffcc00]"></div>
+      `
+    }],
+  }
+
+  return run(config).then(result => {
+    expect(result.css).toMatchCss(String.raw`
+      .mso-shadow-color-\[\#ffcc00\] {
+        mso-shadow-color: #ffcc00
+      }
+      .mso-shadow-color-auto {
+        mso-shadow-color: auto
+      }
+      .mso-shadow-color-red-200 {
+        mso-shadow-color: #fecaca
+      }
+    `)
+  })
+})
+
 test('mso-element-frame-{v|h}space', () => {
   const config = {
     content: [{
@@ -894,6 +920,264 @@ test('mso-element-frame-{v|h}space', () => {
       }
       .mso-element-frame-vspace-\[16px\] {
         mso-element-frame-vspace: 16px
+      }
+    `)
+  })
+})
+
+test('mso-border colors', () => {
+  const config = {
+    content: [{
+      raw: String.raw`
+        <div class="mso-border-alt-[#ffcc00]"></div>
+        <div class="mso-border-alt-auto"></div>
+        <div class="mso-border-alt-red-200"></div>
+
+        <div class="mso-border-between-[#ffcc00]"></div>
+        <div class="mso-border-between-auto"></div>
+        <div class="mso-border-between-red-200"></div>
+
+        <div class="mso-border-bottom-alt-[#ffcc00]"></div>
+        <div class="mso-border-bottom-alt-auto"></div>
+        <div class="mso-border-bottom-alt-red-200"></div>
+
+        <div class="mso-border-left-alt-[#ffcc00]"></div>
+        <div class="mso-border-left-alt-auto"></div>
+        <div class="mso-border-left-alt-red-200"></div>
+
+        <div class="mso-border-right-alt-[#ffcc00]"></div>
+        <div class="mso-border-right-alt-auto"></div>
+        <div class="mso-border-right-alt-red-200"></div>
+
+        <div class="mso-border-top-alt-[#ffcc00]"></div>
+        <div class="mso-border-top-alt-auto"></div>
+        <div class="mso-border-top-alt-red-200"></div>
+      `
+    }],
+  }
+
+  return run(config).then(result => {
+    expect(result.css).toMatchCss(String.raw`
+      .mso-border-alt-\[\#ffcc00\] {
+        mso-border-alt: #ffcc00
+      }
+      .mso-border-alt-auto {
+        mso-border-alt: auto
+      }
+      .mso-border-alt-red-200 {
+        mso-border-alt: #fecaca
+      }
+
+      .mso-border-between-\[\#ffcc00\] {
+        mso-border-between: #ffcc00
+      }
+      .mso-border-between-auto {
+        mso-border-between: auto
+      }
+      .mso-border-between-red-200 {
+        mso-border-between: #fecaca
+      }
+
+      .mso-border-bottom-alt-\[\#ffcc00\] {
+        mso-border-bottom-alt: #ffcc00
+      }
+      .mso-border-bottom-alt-auto {
+        mso-border-bottom-alt: auto
+      }
+      .mso-border-bottom-alt-red-200 {
+        mso-border-bottom-alt: #fecaca
+      }
+
+      .mso-border-left-alt-\[\#ffcc00\] {
+        mso-border-left-alt: #ffcc00
+      }
+      .mso-border-left-alt-auto {
+        mso-border-left-alt: auto
+      }
+      .mso-border-left-alt-red-200 {
+        mso-border-left-alt: #fecaca
+      }
+
+      .mso-border-right-alt-\[\#ffcc00\] {
+        mso-border-right-alt: #ffcc00
+      }
+      .mso-border-right-alt-auto {
+        mso-border-right-alt: auto
+      }
+      .mso-border-right-alt-red-200 {
+        mso-border-right-alt: #fecaca
+      }
+
+      .mso-border-top-alt-\[\#ffcc00\] {
+        mso-border-top-alt: #ffcc00
+      }
+      .mso-border-top-alt-auto {
+        mso-border-top-alt: auto
+      }
+      .mso-border-top-alt-red-200 {
+        mso-border-top-alt: #fecaca
+      }
+    `)
+  })
+})
+
+test('mso-border widths', () => {
+  const config = {
+    content: [{
+      raw: String.raw`
+      <div class="mso-border-between-width-20"></div>
+      <div class="mso-border-between-width-[10px]"></div>
+        <div class="mso-border-between-width-thin"></div>
+
+        <div class="mso-border-bottom-width-alt-20"></div>
+        <div class="mso-border-bottom-width-alt-[10px]"></div>
+        <div class="mso-border-bottom-width-alt-thin"></div>
+
+        <div class="mso-border-left-width-alt-20"></div>
+        <div class="mso-border-left-width-alt-[10px]"></div>
+        <div class="mso-border-left-width-alt-thin"></div>
+
+        <div class="mso-border-right-width-alt-20"></div>
+        <div class="mso-border-right-width-alt-[10px]"></div>
+        <div class="mso-border-right-width-alt-thin"></div>
+
+        <div class="mso-border-top-width-alt-20"></div>
+        <div class="mso-border-top-width-alt-[10px]"></div>
+        <div class="mso-border-top-width-alt-thin"></div>
+
+        <div class="mso-border-width-alt-20"></div>
+        <div class="mso-border-width-alt-[10px]"></div>
+        <div class="mso-border-width-alt-thin"></div>
+      `
+    }],
+  }
+
+  return run(config).then(result => {
+    expect(result.css).toMatchCss(String.raw`
+      .mso-border-between-width-20 {
+        mso-border-between-width: 5rem
+      }
+      .mso-border-between-width-\[10px\] {
+        mso-border-between-width: 10px
+      }
+      .mso-border-between-width-thin {
+        mso-border-between-width: thin
+      }
+
+      .mso-border-bottom-width-alt-20 {
+        mso-border-bottom-width-alt: 5rem
+      }
+      .mso-border-bottom-width-alt-\[10px\] {
+        mso-border-bottom-width-alt: 10px
+      }
+      .mso-border-bottom-width-alt-thin {
+        mso-border-bottom-width-alt: thin
+      }
+
+      .mso-border-left-width-alt-20 {
+        mso-border-left-width-alt: 5rem
+      }
+      .mso-border-left-width-alt-\[10px\] {
+        mso-border-left-width-alt: 10px
+      }
+      .mso-border-left-width-alt-thin {
+        mso-border-left-width-alt: thin
+      }
+
+      .mso-border-right-width-alt-20 {
+        mso-border-right-width-alt: 5rem
+      }
+      .mso-border-right-width-alt-\[10px\] {
+        mso-border-right-width-alt: 10px
+      }
+      .mso-border-right-width-alt-thin {
+        mso-border-right-width-alt: thin
+      }
+
+      .mso-border-top-width-alt-20 {
+        mso-border-top-width-alt: 5rem
+      }
+      .mso-border-top-width-alt-\[10px\] {
+        mso-border-top-width-alt: 10px
+      }
+      .mso-border-top-width-alt-thin {
+        mso-border-top-width-alt: thin
+      }
+
+      .mso-border-width-alt-20 {
+        mso-border-width-alt: 5rem
+      }
+      .mso-border-width-alt-\[10px\] {
+        mso-border-width-alt: 10px
+      }
+      .mso-border-width-alt-thin {
+        mso-border-width-alt: thin
+      }
+    `)
+  })
+})
+
+test('mso-border-{bottom|left|right|top}-source', () => {
+  const config = {
+    content: [{
+      raw: String.raw`
+        <div class="mso-border-bottom-source-auto"></div>
+        <div class="mso-border-left-source-auto"></div>
+        <div class="mso-border-right-source-auto"></div>
+        <div class="mso-border-top-source-auto"></div>
+      `
+    }],
+  }
+
+  return run(config).then(result => {
+    expect(result.css).toMatchCss(String.raw`
+      .mso-border-bottom-source-auto {
+        mso-border-bottom-source: auto
+      }
+      .mso-border-left-source-auto {
+        mso-border-left-source: auto
+      }
+      .mso-border-right-source-auto {
+        mso-border-right-source: auto
+      }
+      .mso-border-top-source-auto {
+        mso-border-top-source: auto
+      }
+    `)
+  })
+})
+
+test('mso-border-shadow', () => {
+  const config = {
+    content: [{
+      raw: String.raw`
+        <div class="mso-border-shadow-no"></div>
+      `
+    }],
+  }
+
+  return run(config).then(result => {
+    expect(result.css).toMatchCss(String.raw`
+      .mso-border-shadow-no {
+        mso-border-shadow: no
+      }
+    `)
+  })
+})
+
+test('mso-border-effect', () => {
+  const config = {
+    content: [{
+      raw: String.raw`
+        <div class="mso-border-effect-3d"></div>
+      `
+    }],
+  }
+
+  return run(config).then(result => {
+    expect(result.css).toMatchCss(String.raw`
+      .mso-border-effect-3d {
+        mso-border-effect: 3d
       }
     `)
   })

@@ -1,5 +1,6 @@
 import plugin from 'tailwindcss/plugin'
 import flattenColorPalette from 'tailwindcss/lib/util/flattenColorPalette'
+import {msoBorderColors} from './msoColors.js'
 
 const tailwindCssMsoPlugin = plugin.withOptions(
   function (options = {}) {
@@ -601,6 +602,23 @@ const tailwindCssMsoPlugin = plugin.withOptions(
         }
       )
 
+      // mso-shadow-color
+      matchUtilities(
+        {
+          'mso-shadow-color': value => ({
+            'mso-shadow-color': value
+          }),
+        },
+        {
+          values: {
+            auto: 'auto',
+            windowtext: 'windowtext',
+            ...flattenColorPalette(theme('colors')),
+          },
+          respectImportant,
+        }
+      )
+
       // mso-element-frame-vspace, mso-element-frame-hspace
       matchUtilities(
         {
@@ -614,6 +632,132 @@ const tailwindCssMsoPlugin = plugin.withOptions(
         {
           values: theme('spacing'),
           supportsNegativeValues: true,
+          respectImportant,
+        }
+      )
+
+      // mso-border colors
+      matchUtilities(
+        {
+          'mso-border-alt': value => ({
+            'mso-border-alt': value
+          }),
+          'mso-border-between': value => ({
+            'mso-border-between': value
+          }),
+          'mso-border-bottom-alt': value => ({
+            'mso-border-bottom-alt': value
+          }),
+          'mso-border-left-alt': value => ({
+            'mso-border-left-alt': value
+          }),
+          'mso-border-right-alt': value => ({
+            'mso-border-right-alt': value
+          }),
+          'mso-border-top-alt': value => ({
+            'mso-border-top-alt': value
+          }),
+        },
+        {
+          values: {
+            ...msoBorderColors,
+            ...flattenColorPalette(theme('colors')),
+
+          },
+          respectImportant,
+        }
+      )
+
+      // mso-border widths
+      matchUtilities(
+        {
+          'mso-border-between-width': value => ({
+            'mso-border-between-width': value
+          }),
+          'mso-border-width-alt': value => ({
+            'mso-border-width-alt': value
+          }),
+          'mso-border-bottom-width-alt': value => ({
+            'mso-border-bottom-width-alt': value
+          }),
+          'mso-border-left-width-alt': value => ({
+            'mso-border-left-width-alt': value
+          }),
+          'mso-border-right-width-alt': value => ({
+            'mso-border-right-width-alt': value
+          }),
+          'mso-border-top-width-alt': value => ({
+            'mso-border-top-width-alt': value
+          }),
+        },
+        {
+          values: {
+            medium: 'medium',
+            thick: 'thick',
+            thin: 'thin',
+            ...theme('spacing'),
+          },
+          respectImportant,
+        }
+      )
+
+      // mso-border-*-source
+      matchUtilities(
+        {
+          'mso-border-bottom-source': value => ({
+            'mso-border-bottom-source': value
+          }),
+          'mso-border-left-source': value => ({
+            'mso-border-left-source': value
+          }),
+          'mso-border-right-source': value => ({
+            'mso-border-right-source': value
+          }),
+          'mso-border-top-source': value => ({
+            'mso-border-top-source': value
+          }),
+        },
+        {
+          values: {
+            auto: 'auto',
+            background: 'background',
+            foreground: 'foreground',
+
+          },
+          respectImportant,
+        }
+      )
+
+      // mso-border-shadow
+      matchUtilities(
+        {
+          'mso-border-shadow': value => ({
+            'mso-border-shadow': value
+          }),
+        },
+        {
+          values: {
+            no: 'no',
+            yes: 'yes',
+
+          },
+          respectImportant,
+        }
+      )
+
+      // mso-border-effect
+      matchUtilities(
+        {
+          'mso-border-effect': value => ({
+            'mso-border-effect': value
+          }),
+        },
+        {
+          values: {
+            '3d': '3d',
+            box: 'box',
+
+          },
           respectImportant,
         }
       )
