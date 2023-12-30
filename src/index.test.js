@@ -869,6 +869,32 @@ test('mso-shading', () => {
   })
 })
 
+test('mso-shadow-color', () => {
+  const config = {
+    content: [{
+      raw: String.raw`
+        <div class="mso-shadow-color-auto"></div>
+        <div class="mso-shadow-color-red-200"></div>
+        <div class="mso-shadow-color-[#ffcc00]"></div>
+      `
+    }],
+  }
+
+  return run(config).then(result => {
+    expect(result.css).toMatchCss(String.raw`
+      .mso-shadow-color-\[\#ffcc00\] {
+        mso-shadow-color: #ffcc00
+      }
+      .mso-shadow-color-auto {
+        mso-shadow-color: auto
+      }
+      .mso-shadow-color-red-200 {
+        mso-shadow-color: #fecaca
+      }
+    `)
+  })
+})
+
 test('mso-element-frame-{v|h}space', () => {
   const config = {
     content: [{

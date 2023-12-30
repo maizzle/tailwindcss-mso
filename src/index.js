@@ -602,6 +602,23 @@ const tailwindCssMsoPlugin = plugin.withOptions(
         }
       )
 
+      // mso-shadow-color
+      matchUtilities(
+        {
+          'mso-shadow-color': value => ({
+            'mso-shadow-color': value
+          }),
+        },
+        {
+          values: {
+            auto: 'auto',
+            windowtext: 'windowtext',
+            ...flattenColorPalette(theme('colors')),
+          },
+          respectImportant,
+        }
+      )
+
       // mso-element-frame-vspace, mso-element-frame-hspace
       matchUtilities(
         {
