@@ -1,8 +1,8 @@
-import plugin from 'tailwindcss/plugin'
-import flattenColorPalette from 'tailwindcss/lib/util/flattenColorPalette'
-import {msoBorderColors} from './msoColors.js'
+const plugin = require('tailwindcss/plugin')
+const flattenColorPalette = require('tailwindcss/lib/util/flattenColorPalette').default
+const msoBorderColors = require('./msoColors.js')
 
-const tailwindCssMsoPlugin = plugin.withOptions(
+module.exports = plugin.withOptions(
   function (options = {}) {
     const respectImportant = Boolean(options.respectImportant)
 
@@ -662,7 +662,6 @@ const tailwindCssMsoPlugin = plugin.withOptions(
           values: {
             ...msoBorderColors,
             ...flattenColorPalette(theme('colors')),
-
           },
           respectImportant,
         }
@@ -722,7 +721,6 @@ const tailwindCssMsoPlugin = plugin.withOptions(
             auto: 'auto',
             background: 'background',
             foreground: 'foreground',
-
           },
           respectImportant,
         }
@@ -739,7 +737,6 @@ const tailwindCssMsoPlugin = plugin.withOptions(
           values: {
             no: 'no',
             yes: 'yes',
-
           },
           respectImportant,
         }
@@ -756,7 +753,6 @@ const tailwindCssMsoPlugin = plugin.withOptions(
           values: {
             '3d': '3d',
             box: 'box',
-
           },
           respectImportant,
         }
@@ -764,5 +760,3 @@ const tailwindCssMsoPlugin = plugin.withOptions(
     }
   }
 )
-
-export default tailwindCssMsoPlugin

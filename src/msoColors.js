@@ -1,5 +1,5 @@
 /* eslint-disable */
-export const msoBorderColors = {
+module.exports = {
   'auto': 'auto',
   'windowtext': 'windowtext',
   'apples': 'apples',
@@ -208,5 +208,3 @@ export const msoBorderColors = {
   'zig-zag': 'zig-zag',
   'zig-zag-stitch': 'zig-zag-stitch'
 }
-
-msoBorderColors
