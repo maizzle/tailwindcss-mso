@@ -198,11 +198,12 @@ Values: `at-least`, `exactly`
 
 Values: `normal`  (+ values from your `spacing` scale)
 
+
 [npm]: https://www.npmjs.com/package/tailwindcss-mso
 [npm-stats]: https://npm-stat.com/charts.html?package=tailwindcss-mso&from=2020-08-23
-[npm-version-shield]: https://img.shields.io/npm/v/tailwindcss-mso.svg?style=flat-square
-[npm-stats-shield]: https://img.shields.io/npm/dt/tailwindcss-mso.svg?style=flat-square&color=6875f5
+[npm-version-shield]: https://img.shields.io/npm/v/tailwindcss-mso.svg
+[npm-stats-shield]: https://img.shields.io/npm/dt/tailwindcss-mso.svg?color=6875f5
 [github-ci]: https://github.com/maizzle/tailwindcss-mso/actions
-[github-ci-shield]: https://img.shields.io/github/workflow/status/maizzle/tailwindcss-mso/Node.js%20CI?style=flat-square
+[github-ci-shield]: https://github.com/maizzle/tailwindcss-mso/actions/workflows/nodejs.yml/badge.svg
 [license]: ./LICENSE
-[license-shield]: https://img.shields.io/npm/l/tailwindcss-mso.svg?style=flat-square&color=0e9f6e
+[license-shield]: https://img.shields.io/npm/l/tailwindcss-mso.svg?color=0e9f6e
