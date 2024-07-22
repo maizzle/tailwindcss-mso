@@ -7,8 +7,8 @@
     "src"
   ],
   "scripts": {
+    "dev": "vitest",
     "release": "npx np",
-    "test:dev": "vitest",
     "test": "vitest run --coverage"
   },
   "author": "Cosmin Popovici (@cossssmin)",
