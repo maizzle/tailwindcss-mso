@@ -3,6 +3,9 @@
   "version": "1.4.2",
   "description": "Tailwind CSS plugin that generates MSO utilities.",
   "main": "src/index.js",
+  "files": [
+    "src"
+  ],
   "scripts": {
     "release": "npx np",
     "test:dev": "vitest",
