@@ -38,5 +38,8 @@
     "maizzle",
     "postcss-plugin",
     "mso"
-  ]
+  ],
+  "engines": {
+    "node": ">=18.20"
+  }
 }
