@@ -1,5 +1,5 @@
 const plugin = require('tailwindcss/plugin')
-const flattenColorPalette = require('tailwindcss/lib/util/flattenColorPalette').default
+const flattenColorPalette = require('tailwindcss/lib/util/flattenColorPalette')
 const msoBorderColors = require('./msoColors.js')
 
 module.exports = plugin.withOptions(
